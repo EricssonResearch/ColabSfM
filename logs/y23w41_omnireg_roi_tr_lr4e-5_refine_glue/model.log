@@ -1,0 +1,648 @@
+RIGA_v2(
+  (coarse_matching): CoarseMatching()
+  (backbone): RIPointTransformer(
+    (enc1): Sequential(
+      (0): TransitionDown(
+        (transformer): LocalPPFTransformer(
+          (embedding): PPFStructualEmbedding(
+            (embedding): SinusoidalPositionalEmbedding()
+            (proj): Linear(in_features=4, out_features=64, bias=True)
+          )
+          (in_proj): Linear(in_features=1, out_features=64, bias=True)
+          (transformer): LocalRPEAttentionLayer(
+            (attention): LocalRPEMultiHeadAttention(
+              (proj_q): Linear(in_features=64, out_features=64, bias=True)
+              (proj_k): Linear(in_features=64, out_features=64, bias=True)
+              (proj_v): Linear(in_features=64, out_features=64, bias=True)
+              (proj_p): Linear(in_features=64, out_features=64, bias=True)
+              (proj_vp): Linear(in_features=64, out_features=64, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=64, out_features=64, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          )
+          (out_proj): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=64, bias=True)
+            )
+            (in_proj): Linear(in_features=64, out_features=64, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=64, out_features=64, bias=True)
+                (proj_k): Linear(in_features=64, out_features=64, bias=True)
+                (proj_v): Linear(in_features=64, out_features=64, bias=True)
+                (proj_p): Linear(in_features=64, out_features=64, bias=True)
+                (proj_vp): Linear(in_features=64, out_features=64, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=64, out_features=64, bias=True)
+          )
+        )
+        (bn2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (enc2): Sequential(
+      (0): TransitionDown(
+        (transformer): LocalPPFTransformer(
+          (embedding): PPFStructualEmbedding(
+            (embedding): SinusoidalPositionalEmbedding()
+            (proj): Linear(in_features=4, out_features=128, bias=True)
+          )
+          (in_proj): Linear(in_features=64, out_features=128, bias=True)
+          (transformer): LocalRPEAttentionLayer(
+            (attention): LocalRPEMultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (proj_p): Linear(in_features=128, out_features=128, bias=True)
+              (proj_vp): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (out_proj): Linear(in_features=128, out_features=128, bias=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=128, bias=True)
+            )
+            (in_proj): Linear(in_features=128, out_features=128, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=128, out_features=128, bias=True)
+                (proj_k): Linear(in_features=128, out_features=128, bias=True)
+                (proj_v): Linear(in_features=128, out_features=128, bias=True)
+                (proj_p): Linear(in_features=128, out_features=128, bias=True)
+                (proj_vp): Linear(in_features=128, out_features=128, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (bn2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=128, bias=True)
+            )
+            (in_proj): Linear(in_features=128, out_features=128, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=128, out_features=128, bias=True)
+                (proj_k): Linear(in_features=128, out_features=128, bias=True)
+                (proj_v): Linear(in_features=128, out_features=128, bias=True)
+                (proj_p): Linear(in_features=128, out_features=128, bias=True)
+                (proj_vp): Linear(in_features=128, out_features=128, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (bn2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (enc3): Sequential(
+      (0): TransitionDown(
+        (transformer): LocalPPFTransformer(
+          (embedding): PPFStructualEmbedding(
+            (embedding): SinusoidalPositionalEmbedding()
+            (proj): Linear(in_features=4, out_features=256, bias=True)
+          )
+          (in_proj): Linear(in_features=128, out_features=256, bias=True)
+          (transformer): LocalRPEAttentionLayer(
+            (attention): LocalRPEMultiHeadAttention(
+              (proj_q): Linear(in_features=256, out_features=256, bias=True)
+              (proj_k): Linear(in_features=256, out_features=256, bias=True)
+              (proj_v): Linear(in_features=256, out_features=256, bias=True)
+              (proj_p): Linear(in_features=256, out_features=256, bias=True)
+              (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=256, out_features=256, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=256, bias=True)
+            )
+            (in_proj): Linear(in_features=256, out_features=256, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+        )
+        (bn2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=256, bias=True)
+            )
+            (in_proj): Linear(in_features=256, out_features=256, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+        )
+        (bn2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (enc4): Sequential(
+      (0): TransitionDown(
+        (transformer): LocalPPFTransformer(
+          (embedding): PPFStructualEmbedding(
+            (embedding): SinusoidalPositionalEmbedding()
+            (proj): Linear(in_features=4, out_features=256, bias=True)
+          )
+          (in_proj): Linear(in_features=256, out_features=256, bias=True)
+          (transformer): LocalRPEAttentionLayer(
+            (attention): LocalRPEMultiHeadAttention(
+              (proj_q): Linear(in_features=256, out_features=256, bias=True)
+              (proj_k): Linear(in_features=256, out_features=256, bias=True)
+              (proj_v): Linear(in_features=256, out_features=256, bias=True)
+              (proj_p): Linear(in_features=256, out_features=256, bias=True)
+              (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=256, out_features=256, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=256, bias=True)
+            )
+            (in_proj): Linear(in_features=256, out_features=256, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+        )
+        (bn2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=256, bias=True)
+            )
+            (in_proj): Linear(in_features=256, out_features=256, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+        )
+        (bn2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (dec4): Sequential(
+      (0): TransitionUp(
+        (linear1): Sequential(
+          (0): Linear(in_features=512, out_features=256, bias=True)
+          (1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+        (linear2): Sequential(
+          (0): Linear(in_features=256, out_features=256, bias=True)
+          (1): ReLU(inplace=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=256, bias=True)
+            )
+            (in_proj): Linear(in_features=256, out_features=256, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+        )
+        (bn2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (dec3): Sequential(
+      (0): TransitionUp(
+        (linear1): Sequential(
+          (0): Linear(in_features=256, out_features=256, bias=True)
+          (1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+        (linear2): Sequential(
+          (0): Linear(in_features=256, out_features=256, bias=True)
+          (1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=256, bias=True)
+            )
+            (in_proj): Linear(in_features=256, out_features=256, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=256, out_features=256, bias=True)
+          )
+        )
+        (bn2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (dec2): Sequential(
+      (0): TransitionUp(
+        (linear1): Sequential(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+        (linear2): Sequential(
+          (0): Linear(in_features=256, out_features=128, bias=True)
+          (1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=128, bias=True)
+            )
+            (in_proj): Linear(in_features=128, out_features=128, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=128, out_features=128, bias=True)
+                (proj_k): Linear(in_features=128, out_features=128, bias=True)
+                (proj_v): Linear(in_features=128, out_features=128, bias=True)
+                (proj_p): Linear(in_features=128, out_features=128, bias=True)
+                (proj_vp): Linear(in_features=128, out_features=128, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (bn2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (dec1): Sequential(
+      (0): TransitionUp(
+        (linear1): Sequential(
+          (0): Linear(in_features=64, out_features=64, bias=True)
+          (1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+        (linear2): Sequential(
+          (0): Linear(in_features=128, out_features=64, bias=True)
+          (1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (2): ReLU(inplace=True)
+        )
+      )
+      (1): RIPointTransformerBlock(
+        (transformer): RIPointTransformerLayer(
+          (transformer): LocalPPFTransformer(
+            (embedding): PPFStructualEmbedding(
+              (embedding): SinusoidalPositionalEmbedding()
+              (proj): Linear(in_features=4, out_features=64, bias=True)
+            )
+            (in_proj): Linear(in_features=64, out_features=64, bias=True)
+            (transformer): LocalRPEAttentionLayer(
+              (attention): LocalRPEMultiHeadAttention(
+                (proj_q): Linear(in_features=64, out_features=64, bias=True)
+                (proj_k): Linear(in_features=64, out_features=64, bias=True)
+                (proj_v): Linear(in_features=64, out_features=64, bias=True)
+                (proj_p): Linear(in_features=64, out_features=64, bias=True)
+                (proj_vp): Linear(in_features=64, out_features=64, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            )
+            (out_proj): Linear(in_features=64, out_features=64, bias=True)
+          )
+        )
+        (bn2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (global_transformer): GeometricTransformer(
+      (embedding): GeometricStructureEmbedding(
+        (embedding): SinusoidalPositionalEmbedding()
+        (proj_d): Linear(in_features=256, out_features=256, bias=True)
+        (proj_a): Linear(in_features=256, out_features=256, bias=True)
+      )
+      (in_proj): Linear(in_features=256, out_features=256, bias=True)
+      (transformer): RPEConditionalTransformer(
+        (layers): ModuleList(
+          (0): RPETransformerLayer(
+            (attention): RPEAttentionLayer(
+              (attention): RPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (pos_linear): Linear(in_features=256, out_features=256, bias=True)
+              (pos_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (output): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (pos_proj): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (1): TransformerLayer(
+            (attention): AttentionLayer(
+              (attention): MultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (output): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (2): RPETransformerLayer(
+            (attention): RPEAttentionLayer(
+              (attention): RPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (pos_linear): Linear(in_features=256, out_features=256, bias=True)
+              (pos_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (output): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (pos_proj): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (3): TransformerLayer(
+            (attention): AttentionLayer(
+              (attention): MultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (output): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (4): RPETransformerLayer(
+            (attention): RPEAttentionLayer(
+              (attention): RPEMultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (proj_p): Linear(in_features=256, out_features=256, bias=True)
+                (proj_vp): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (pos_linear): Linear(in_features=256, out_features=256, bias=True)
+              (pos_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (output): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (pos_proj): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (5): TransformerLayer(
+            (attention): AttentionLayer(
+              (attention): MultiHeadAttention(
+                (proj_q): Linear(in_features=256, out_features=256, bias=True)
+                (proj_k): Linear(in_features=256, out_features=256, bias=True)
+                (proj_v): Linear(in_features=256, out_features=256, bias=True)
+                (dropout): Identity()
+              )
+              (linear): Linear(in_features=256, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+            (output): AttentionOutput(
+              (expand): Linear(in_features=256, out_features=512, bias=True)
+              (activation): ReLU()
+              (squeeze): Linear(in_features=512, out_features=256, bias=True)
+              (dropout): Identity()
+              (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+        )
+      )
+      (out_proj): Linear(in_features=256, out_features=256, bias=True)
+    )
+    (occ_proj): Linear(in_features=256, out_features=1, bias=True)
+  )
+  (OT): LearnableLogOptimalTransport(num_iter=1)
+  (coarse_proj): Linear(in_features=256, out_features=256, bias=True)
+  (fine_proj): Linear(in_features=64, out_features=64, bias=True)
+  (refine_glue): Refiner(
+    (self_attn): ModuleList(
+      (0-3): 4 x Transformer(
+        (Wqkv): Linear(in_features=64, out_features=192, bias=True)
+        (inner_attn): Attention()
+        (out_proj): Linear(in_features=64, out_features=64, bias=True)
+        (ffn): Sequential(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (2): GELU(approximate='none')
+          (3): Linear(in_features=128, out_features=64, bias=True)
+        )
+      )
+    )
+    (cross_attn): ModuleList(
+      (0-3): 4 x CrossTransformer(
+        (to_qk): Linear(in_features=64, out_features=64, bias=True)
+        (to_v): Linear(in_features=64, out_features=64, bias=True)
+        (to_out): Linear(in_features=64, out_features=64, bias=True)
+        (ffn): Sequential(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (2): GELU(approximate='none')
+          (3): Linear(in_features=128, out_features=64, bias=True)
+        )
+        (attention): Attention()
+      )
+    )
+  )
+  (coarse_generator): GTCoarseCorrGenerator()
+  (fine_matching): FineMatching()
+  (optimal_transport): LearnableLogOptimalTransport(num_iter=100)
+)

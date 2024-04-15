@@ -1,0 +1,114 @@
+misc:
+  exp_dir: indoor
+  mode: val
+  gpu_mode: True
+  verbose: True
+  verbose_freq: 1000
+  snapshot_freq: 1
+  pretrain: 'weights/indoor.pth'
+  debug: False
+  output_metric_path: null
+
+
+model:
+  num_layers: 4 
+  in_points_dim: 3
+  first_feats_dim: 128
+  final_feats_dim: 32
+  first_subsampling_dl: 0.025
+  in_feats_dim: 1
+  conv_radius: 2.5
+  deform_radius: 5.0 
+  num_kernel_points: 15
+  KP_extent: 2.0
+  KP_influence: linear
+  aggregation_mode: sum 
+  fixed_kernel_points: center
+  use_batch_norm: True 
+  batch_norm_momentum: 0.02
+  deformable: False
+  modulated: False 
+  add_cross_score: True
+  condition_feature: True
+  non_strict_loading: False
+
+overlap_attention_module:
+  gnn_feats_dim: 256 
+  dgcnn_k: 10
+  num_head: 4
+  nets: ['self','cross','self']
+
+loss:
+  pos_margin: 0.1
+  neg_margin: 1.4
+  log_scale: 24
+  pos_radius: 0.0375
+  safe_radius: 0.1
+  overlap_radius: 0.0375
+  matchability_radius: 0.05 
+  w_circle_loss: 1.0
+  w_overlap_loss: 1.0
+  w_saliency_loss: 0.0
+  max_points: 256
+
+optimiser:
+  optimizer: SGD
+  max_epoch: 40
+  lr: 0.005
+  weight_decay: 0.000001
+  momentum: 0.98
+  scheduler: ExpLR
+  scheduler_gamma: 0.95
+  scheduler_freq: 1
+  iter_size: 1
+
+data:
+  dataset: sfmreg
+  root: data/sfmreg
+  train_info: omnireg/roitr/configs/sfmreg/sfmreg_combined_train_infos.pkl
+  val_info: omnireg/roitr/configs/sfmreg/sfmreg_combined_test_infos.pkl
+  test_info: omnireg/roitr/configs/sfmreg/sfmreg_combined_test_infos.pkl
+  augment_noise: 0.
+  benchmark: sfmreg
+  rotated: False
+  sfmreg_mode: se3
+  normal_orientation: viewpoint
+  low_overlap: False
+  use_color: False
+  use_gray: False
+
+demo:
+  src_pcd: assets/cloud_bin_21.pth
+  tgt_pcd: assets/cloud_bin_34.pth
+  n_points: 1000
+
+train:
+  max_epoch: 150
+  batch_size: 1
+  training_max_iter: 3500
+  val_max_iter: 500
+  scheduler_interval: 1
+  snapshot_interval: 1
+  num_workers: 4
+  
+coarse_loss:
+  coarse_loss_positive_margin: 0.1
+  coarse_loss_negative_margin: 1.4
+  coarse_loss_positive_optimal: 0.1
+  coarse_loss_negative_optimal: 1.4
+  coarse_loss_log_scale: 24
+  coarse_loss_positive_overlap: 0.1
+  coarse_loss_weight: 1.0
+
+fine_loss:
+  fine_loss_positive_radius: 0.1
+  fine_loss_weight: 1.0
+  fine_loss_use_mnn: False
+
+occlusion_loss:
+  occ_loss_weight: 0.0
+  #occ_thres: 0.0
+
+eval:
+  eval_acceptance_overlap: 0.0
+  eval_acceptance_radius: 0.1

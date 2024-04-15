@@ -1,0 +1,30 @@
+#parameters 40.259075 M
+#parameters 10.102531 M
+Successfully load pretrained model from pretrained/model_3dmatch.pth!
+Current best loss 3.092932455174558
+Current best c_loss 0.6709955289915159
+Current best f_loss 2.1981095421063648
+Current best PIR 0.684684693813324
+Current best IR 0.709432065486908
+#parameters 10.102531 M
+Successfully load pretrained model from pretrained/model_3dmatch.pth!
+Current best loss 3.092932455174558
+Current best c_loss 0.6709955289915159
+Current best f_loss 2.1981095421063648
+Current best PIR 0.684684693813324
+Current best IR 0.709432065486908
+#parameters 10.102531 M
+#parameters 10.102531 M
+Successfully load pretrained model from pretrained/model_3dmatch.pth!
+Current best loss 3.092932455174558
+Current best c_loss 0.6709955289915159
+Current best f_loss 2.1981095421063648
+Current best PIR 0.684684693813324
+Current best IR 0.709432065486908
+#parameters 10.102531 M
+Successfully load pretrained model from pretrained/model_3dmatch.pth!
+Current best loss 3.092932455174558
+Current best c_loss 0.6709955289915159
+Current best f_loss 2.1981095421063648
+Current best PIR 0.684684693813324
+Current best IR 0.709432065486908

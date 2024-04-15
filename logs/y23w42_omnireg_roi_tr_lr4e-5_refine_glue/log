@@ -1,0 +1,51 @@
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+#parameters 10.406723 M
+train Epoch: 1 [  10/20642] loss:4.98	c_loss:1.14	f_loss:3.83	o_loss:0.00	PIR:0.03	IR:0.35	
+train Epoch: 1 [  20/20642] loss:4.82	c_loss:1.08	f_loss:3.74	o_loss:0.00	PIR:0.02	IR:0.23	
+train Epoch: 1 [  30/20642] loss:4.75	c_loss:1.05	f_loss:3.69	o_loss:0.00	PIR:0.01	IR:0.21	
+train Epoch: 1 [  40/20642] loss:4.72	c_loss:1.04	f_loss:3.68	o_loss:0.00	PIR:0.01	IR:0.17	
+train Epoch: 1 [  50/20642] loss:4.69	c_loss:1.03	f_loss:3.66	o_loss:0.00	PIR:0.01	IR:0.17	
+train Epoch: 1 [  60/20642] loss:4.68	c_loss:1.03	f_loss:3.65	o_loss:0.00	PIR:0.01	IR:0.14	
+train Epoch: 1 [  70/20642] loss:4.67	c_loss:1.02	f_loss:3.65	o_loss:0.00	PIR:0.01	IR:0.14	
+train Epoch: 1 [  80/20642] loss:4.65	c_loss:1.02	f_loss:3.63	o_loss:0.00	PIR:0.01	IR:0.13	
+train Epoch: 1 [  90/20642] loss:4.64	c_loss:1.02	f_loss:3.63	o_loss:0.00	PIR:0.01	IR:0.16	
+train Epoch: 1 [ 100/20642] loss:4.64	c_loss:1.02	f_loss:3.62	o_loss:0.00	PIR:0.01	IR:0.16	
+train Epoch: 1 [ 110/20642] loss:4.64	c_loss:1.02	f_loss:3.62	o_loss:0.00	PIR:0.01	IR:0.15	
+train Epoch: 1 [ 120/20642] loss:4.63	c_loss:1.01	f_loss:3.62	o_loss:0.00	PIR:0.02	IR:0.14	
+train Epoch: 1 [ 130/20642] loss:4.63	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.14	
+train Epoch: 1 [ 140/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.01	IR:0.13	
+train Epoch: 1 [ 150/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.01	IR:0.14	
+train Epoch: 1 [ 160/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.01	IR:0.16	
+train Epoch: 1 [ 170/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.16	
+train Epoch: 1 [ 180/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.17	
+train Epoch: 1 [ 190/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.18	
+train Epoch: 1 [ 200/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.19	
+train Epoch: 1 [ 210/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.19	
+train Epoch: 1 [ 220/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.20	
+train Epoch: 1 [ 230/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.21	
+train Epoch: 1 [ 240/20642] loss:4.62	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.22	
+train Epoch: 1 [ 250/20642] loss:4.61	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.22	
+train Epoch: 1 [ 260/20642] loss:4.61	c_loss:1.01	f_loss:3.61	o_loss:0.00	PIR:0.02	IR:0.22	
+train Epoch: 1 [ 270/20642] loss:4.61	c_loss:1.01	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.21	
+train Epoch: 1 [ 280/20642] loss:4.61	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.21	
+train Epoch: 1 [ 290/20642] loss:4.61	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.22	
+train Epoch: 1 [ 300/20642] loss:4.61	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.23	
+train Epoch: 1 [ 310/20642] loss:4.61	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.24	
+train Epoch: 1 [ 320/20642] loss:4.61	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.24	
+train Epoch: 1 [ 330/20642] loss:4.61	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.24	
+train Epoch: 1 [ 340/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.25	
+train Epoch: 1 [ 350/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.02	IR:0.26	
+train Epoch: 1 [ 360/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.03	IR:0.26	
+train Epoch: 1 [ 370/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.03	IR:0.25	
+train Epoch: 1 [ 380/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.03	IR:0.25	
+train Epoch: 1 [ 390/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.03	IR:0.25	
+train Epoch: 1 [ 400/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.03	IR:0.24	
+#parameters 10.406723 M
+train Epoch: 1 [ 410/20642] loss:4.60	c_loss:1.00	f_loss:3.60	o_loss:0.00	PIR:0.03	IR:0.24	

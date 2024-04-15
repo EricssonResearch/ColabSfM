@@ -1,0 +1,41 @@
+from pathlib import Path
+from hloc import extract_features, match_features, reconstruction, visualization, pairs_from_retrieval, triangulation
+import numpy as np
+import pycolmap
+import pickle as pkl
+import os
+from scantools.capture.session import Session
+
+
+# TODO: the lamar->colmap extraction contains cameras that seem to be iphone, check that lamar_to_colmap.py is correct.
+if __name__ == "__main__":
+    base_path = 'datasets/cambridge/StMarysChurch/colmap'
+    for subset in ["train"]:
+        keys = []
+        scene_path = Path(base_path, subset)
+        image_dir =  Path(scene_path, "images")
+        outputs = Path('StMarysChurch_triangulated', subset)
+        if os.path.exists(outputs):
+            print("outputs exists")
+            pass
+        print(f"Creating a triangulation for session {subset}")
+        try:
+            os.makedirs(outputs, exist_ok=True)
+            sfm_pairs = outputs / 'pairs-netvlad.txt'
+            sfm_dir = outputs / 'sift'
+            retrieval_conf = extract_features.confs['netvlad']
+            feature_conf = extract_features.confs['sift-1024']
+            matcher_conf = match_features.confs['NN-ratio']
+            
+            retrieval_path = extract_features.main(retrieval_conf, image_dir, outputs)
+            pairs_from_retrieval.main(retrieval_path, sfm_pairs, num_matched = 40)
+            feature_path = extract_features.main(feature_conf, image_dir, outputs)
+            match_path = match_features.main(matcher_conf, sfm_pairs, feature_conf['output'], outputs)
+
+            reference_model_A_path = Path(scene_path)
+            model = triangulation.main(sfm_dir, reference_model_A_path, image_dir, sfm_pairs, feature_path, match_path)
+            #visualization.visualize_sfm_2d(model, image_dir)
+            model.write(sfm_dir)
+        except Exception as e:
+            print(e)
+            print("Continuing...")

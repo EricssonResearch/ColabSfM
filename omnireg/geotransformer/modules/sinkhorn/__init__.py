@@ -1,0 +1,1 @@
+from omnireg.geotransformer.modules.sinkhorn.learnable_sinkhorn import LearnableLogOptimalTransport

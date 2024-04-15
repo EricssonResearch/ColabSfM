@@ -1,0 +1,86 @@
+#parameters 10.102531 M
+Successfully load pretrained model from pretrained/model_3dmatch.pth!
+Current best loss 3.092932455174558
+Current best c_loss 0.6709955289915159
+Current best f_loss 2.1981095421063648
+Current best PIR 0.684684693813324
+Current best IR 0.709432065486908
+train Epoch: 22 [  10/7214] loss:4.45	c_loss:0.84	f_loss:3.61	o_loss:0.00	PIR:0.43	IR:0.34	
+train Epoch: 22 [  20/7214] loss:4.34	c_loss:0.84	f_loss:3.50	o_loss:0.00	PIR:0.39	IR:0.31	
+train Epoch: 22 [  30/7214] loss:4.34	c_loss:0.82	f_loss:3.52	o_loss:0.00	PIR:0.41	IR:0.31	
+train Epoch: 22 [  40/7214] loss:4.31	c_loss:0.80	f_loss:3.50	o_loss:0.00	PIR:0.44	IR:0.32	
+train Epoch: 22 [  50/7214] loss:4.26	c_loss:0.80	f_loss:3.46	o_loss:0.00	PIR:0.42	IR:0.32	
+train Epoch: 22 [  60/7214] loss:4.23	c_loss:0.79	f_loss:3.44	o_loss:0.00	PIR:0.44	IR:0.33	
+train Epoch: 22 [  70/7214] loss:4.22	c_loss:0.79	f_loss:3.43	o_loss:0.00	PIR:0.44	IR:0.33	
+train Epoch: 22 [  80/7214] loss:4.22	c_loss:0.78	f_loss:3.43	o_loss:0.00	PIR:0.46	IR:0.35	
+train Epoch: 22 [  90/7214] loss:4.20	c_loss:0.78	f_loss:3.43	o_loss:0.00	PIR:0.47	IR:0.35	
+train Epoch: 22 [ 100/7214] loss:4.19	c_loss:0.78	f_loss:3.41	o_loss:0.00	PIR:0.47	IR:0.35	
+train Epoch: 22 [ 110/7214] loss:4.16	c_loss:0.77	f_loss:3.39	o_loss:0.00	PIR:0.48	IR:0.35	
+train Epoch: 22 [ 120/7214] loss:4.15	c_loss:0.77	f_loss:3.38	o_loss:0.00	PIR:0.49	IR:0.35	
+train Epoch: 22 [ 130/7214] loss:4.15	c_loss:0.77	f_loss:3.38	o_loss:0.00	PIR:0.49	IR:0.35	
+train Epoch: 22 [ 140/7214] loss:4.14	c_loss:0.76	f_loss:3.37	o_loss:0.00	PIR:0.50	IR:0.36	
+train Epoch: 22 [ 150/7214] loss:4.15	c_loss:0.77	f_loss:3.38	o_loss:0.00	PIR:0.50	IR:0.36	
+train Epoch: 22 [ 160/7214] loss:4.16	c_loss:0.77	f_loss:3.39	o_loss:0.00	PIR:0.50	IR:0.35	
+train Epoch: 22 [ 170/7214] loss:4.14	c_loss:0.77	f_loss:3.38	o_loss:0.00	PIR:0.51	IR:0.36	
+train Epoch: 22 [ 180/7214] loss:4.16	c_loss:0.77	f_loss:3.39	o_loss:0.00	PIR:0.51	IR:0.36	
+train Epoch: 22 [ 190/7214] loss:4.16	c_loss:0.77	f_loss:3.40	o_loss:0.00	PIR:0.51	IR:0.36	
+train Epoch: 22 [ 200/7214] loss:4.17	c_loss:0.76	f_loss:3.40	o_loss:0.00	PIR:0.52	IR:0.36	
+train Epoch: 22 [ 210/7214] loss:4.16	c_loss:0.76	f_loss:3.40	o_loss:0.00	PIR:0.52	IR:0.36	
+train Epoch: 22 [ 220/7214] loss:4.16	c_loss:0.76	f_loss:3.40	o_loss:0.00	PIR:0.52	IR:0.36	
+train Epoch: 22 [ 230/7214] loss:4.15	c_loss:0.76	f_loss:3.39	o_loss:0.00	PIR:0.53	IR:0.36	
+train Epoch: 22 [ 240/7214] loss:4.15	c_loss:0.76	f_loss:3.39	o_loss:0.00	PIR:0.53	IR:0.36	
+train Epoch: 22 [ 250/7214] loss:4.14	c_loss:0.76	f_loss:3.39	o_loss:0.00	PIR:0.53	IR:0.36	
+train Epoch: 22 [ 260/7214] loss:4.15	c_loss:0.76	f_loss:3.39	o_loss:0.00	PIR:0.53	IR:0.36	
+train Epoch: 22 [ 270/7214] loss:4.14	c_loss:0.76	f_loss:3.39	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 280/7214] loss:4.14	c_loss:0.76	f_loss:3.38	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 290/7214] loss:4.13	c_loss:0.76	f_loss:3.38	o_loss:0.00	PIR:0.53	IR:0.36	
+train Epoch: 22 [ 300/7214] loss:4.14	c_loss:0.75	f_loss:3.38	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 310/7214] loss:4.13	c_loss:0.76	f_loss:3.38	o_loss:0.00	PIR:0.52	IR:0.36	
+train Epoch: 22 [ 320/7214] loss:4.12	c_loss:0.76	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 330/7214] loss:4.12	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 340/7214] loss:4.12	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 350/7214] loss:4.12	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 360/7214] loss:4.12	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 370/7214] loss:4.12	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.54	IR:0.37	
+train Epoch: 22 [ 380/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.54	IR:0.37	
+train Epoch: 22 [ 390/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.54	IR:0.37	
+train Epoch: 22 [ 400/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 410/7214] loss:4.10	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 420/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 430/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 440/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 450/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.53	IR:0.37	
+train Epoch: 22 [ 460/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 470/7214] loss:4.11	c_loss:0.74	f_loss:3.37	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 480/7214] loss:4.11	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 490/7214] loss:4.11	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.38	
+train Epoch: 22 [ 500/7214] loss:4.11	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.38	
+train Epoch: 22 [ 510/7214] loss:4.12	c_loss:0.75	f_loss:3.37	o_loss:0.00	PIR:0.53	IR:0.38	
+train Epoch: 22 [ 520/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 530/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 540/7214] loss:4.11	c_loss:0.75	f_loss:3.36	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 550/7214] loss:4.10	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 560/7214] loss:4.10	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 570/7214] loss:4.09	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.53	IR:0.38	
+train Epoch: 22 [ 580/7214] loss:4.09	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.53	IR:0.38	
+train Epoch: 22 [ 590/7214] loss:4.09	c_loss:0.75	f_loss:3.34	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 600/7214] loss:4.09	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 610/7214] loss:4.09	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 620/7214] loss:4.09	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 630/7214] loss:4.10	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 640/7214] loss:4.10	c_loss:0.75	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 650/7214] loss:4.10	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 660/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 670/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.38	
+train Epoch: 22 [ 680/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 690/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 700/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 710/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 720/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.55	IR:0.39	
+train Epoch: 22 [ 730/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.55	IR:0.39	
+train Epoch: 22 [ 740/7214] loss:4.09	c_loss:0.74	f_loss:3.35	o_loss:0.00	PIR:0.55	IR:0.39	
+train Epoch: 22 [ 750/7214] loss:4.08	c_loss:0.74	f_loss:3.34	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 760/7214] loss:4.08	c_loss:0.74	f_loss:3.34	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 770/7214] loss:4.08	c_loss:0.74	f_loss:3.34	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 780/7214] loss:4.08	c_loss:0.74	f_loss:3.34	o_loss:0.00	PIR:0.54	IR:0.39	
+train Epoch: 22 [ 790/7214] loss:4.08	c_loss:0.74	f_loss:3.34	o_loss:0.00	PIR:0.54	IR:0.39	
