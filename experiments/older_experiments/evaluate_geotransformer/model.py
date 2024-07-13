@@ -3,10 +3,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 from IPython import embed
 
-from omnireg.geotransformer.modules.ops import point_to_node_partition, index_select
-from omnireg.geotransformer.modules.registration import get_node_correspondences
-from omnireg.geotransformer.modules.sinkhorn import LearnableLogOptimalTransport
-from omnireg.geotransformer.modules.geotransformer import (
+from sfmreg.geotransformer.modules.ops import point_to_node_partition, index_select
+from sfmreg.geotransformer.modules.registration import get_node_correspondences
+from sfmreg.geotransformer.modules.sinkhorn import LearnableLogOptimalTransport
+from sfmreg.geotransformer.modules.geotransformer import (
     GeometricTransformer,
     SuperPointMatching,
     SuperPointTargetGenerator,

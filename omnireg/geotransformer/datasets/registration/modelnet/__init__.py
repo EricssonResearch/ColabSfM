@@ -1,1 +1,0 @@
-from omnireg.geotransformer.datasets.registration.modelnet.dataset import ModelNetPairDataset

@@ -1,4 +1,4 @@
-from omnireg.models.model import OmniGlue
+from sfmreg.models.model import OmniGlue
 
 def sanity_check_gpu():
     device = "cuda"

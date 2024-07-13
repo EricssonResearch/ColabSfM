@@ -6,13 +6,13 @@ from torch.optim.lr_scheduler import ConstantLR
 
 from types import SimpleNamespace
 
-from omnireg.utils import load_obj, get_best_device
-from omnireg.models.model import OmniGlue
-from omnireg.train import train_epoch, train_k_steps
-from omnireg.datasets.indoor import IndoorDataset
-from omnireg.losses.nll_loss import NLLLoss
-from omnireg.benchmarks.tdmatch import TDMatchBenchmark
-from omnireg.checkpoint import CheckPoint
+from sfmreg.utils import load_obj, get_best_device
+from sfmreg.models.model import OmniGlue
+from sfmreg.train import train_epoch, train_k_steps
+from sfmreg.datasets.indoor import IndoorDataset
+from sfmreg.losses.nll_loss import NLLLoss
+from sfmreg.benchmarks.tdmatch import TDMatchBenchmark
+from sfmreg.checkpoint import CheckPoint
 
 def train(args):
     model = OmniGlue().to(get_best_device())
@@ -26,7 +26,7 @@ def train(args):
     lr_scheduler = ConstantLR(optimizer=optimizer)
     objective = NLLLoss()
     num_epochs = 1
-    checkpointer = CheckPoint(dir = "workspace", name = "omnireg_v001")
+    checkpointer = CheckPoint(dir = "workspace", name = "sfmreg_v001")
     start_epoch = 0
     checkpointer.load(model, optimizer, lr_scheduler, start_epoch)
     for epoch_num in range(start_epoch, num_epochs):

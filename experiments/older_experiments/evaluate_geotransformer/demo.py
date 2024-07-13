@@ -3,10 +3,10 @@ import argparse
 import torch
 import numpy as np
 
-from omnireg.geotransformer.utils.data import registration_collate_fn_stack_mode
-from omnireg.geotransformer.utils.torch import to_cuda, release_cuda
-from omnireg.geotransformer.utils.open3d import make_open3d_point_cloud, get_color, draw_geometries
-from omnireg.geotransformer.utils.registration import compute_registration_error
+from sfmreg.geotransformer.utils.data import registration_collate_fn_stack_mode
+from sfmreg.geotransformer.utils.torch import to_cuda, release_cuda
+from sfmreg.geotransformer.utils.open3d import make_open3d_point_cloud, get_color, draw_geometries
+from sfmreg.geotransformer.utils.registration import compute_registration_error
 
 from config import make_cfg
 from model import create_model

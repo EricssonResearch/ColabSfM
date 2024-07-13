@@ -6,16 +6,16 @@ from torch import optim
 import numpy as np
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from omnireg.roitr.lib.utils import setup_seed
-from omnireg.roitr.configs.utils import load_config
+from sfmreg.roitr.lib.utils import setup_seed
+from sfmreg.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from omnireg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from omnireg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
-from omnireg.roitr.lib.tester import get_trainer
-from omnireg.models.geotr_wrapper import GeoTr, calibrate_neighbors_cambridge
-from omnireg.geotransformer import create_model
+from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
+from sfmreg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
+from sfmreg.roitr.lib.tester import get_trainer
+from sfmreg.models.geotr_wrapper import GeoTr, calibrate_neighbors_cambridge
+from sfmreg.geotransformer import create_model
 
-from omnireg.geotransformer.utils.data import registration_collate_fn_stack_mode
+from sfmreg.geotransformer.utils.data import registration_collate_fn_stack_mode
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -31,7 +31,7 @@ def estimate_scale(pointcloud):
 
 def main():
     from tensorboardX import SummaryWriter
-    import omnireg
+    import sfmreg
 
     #########################################################
     # load config
@@ -49,7 +49,7 @@ def main():
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     config = load_config(args.config)
     config['local_rank'] = args.local_rank
     config['root'] = args.data_root
@@ -88,7 +88,7 @@ def main():
     if args.backbone == "3dmatch":
         config.pretrain = "pretrained/geotransformer-3dmatch.pth.tar"
         backbone = "3dmatch"
-        from omnireg.geotransformer.config.config import make_cfg
+        from sfmreg.geotransformer.config.config import make_cfg
         cfg = make_cfg()
 
         cfg.backbone.init_voxel_size = 0.05
@@ -96,7 +96,7 @@ def main():
     else:
         backbone = "kitti"
         config.pretrain = "pretrained/geotransformer-kitti.pth.tar"
-        from omnireg.geotransformer.config.kitti_config import make_cfg
+        from sfmreg.geotransformer.config.kitti_config import make_cfg
         cfg = make_cfg()
 
     cfg.backbone.init_radius = cfg.backbone.init_voxel_size * cfg.backbone.base_radius

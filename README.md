@@ -6,7 +6,7 @@ Here we provide instructions for training sfmreg registration models.
 
 ## Namings
 
-I've used sfmreg, omnireg, and recently SfMReger
+I've used sfmreg, sfmreg, and recently SfMReger
 
 ## Prepare data
 
@@ -42,8 +42,8 @@ Available in [tum_pipeline](tum_pipeline)
 ## Install
 
 1. Create a new conda env:
-```conda create -n omnireg python=3.10```
-```conda activate omnireg```
+```conda create -n sfmreg python=3.10```
+```conda activate sfmreg```
 2. pip install the requirments in development mode
 ```pip install -e .```
 3. Install cuda-toolkit that matches whatever is used by pytorch. You can try something like:
@@ -62,7 +62,7 @@ pip install pointops-0.0.0-cp310-cp310-linux_x86_64.whl # wheel should have a na
 If you're unlucky, this wheel might not work on other devices. You can then try ```auditwheel``` (https://pypi.org/project/auditwheel/).
 5. (Optional) Install the cpp_wrappers for predator
 ```bash
-cd omnireg/OverlapPredator/cpp_wrappers
+cd sfmreg/OverlapPredator/cpp_wrappers
 sh compile_wrappers.sh
 cd ../../..
 ```
@@ -70,7 +70,7 @@ cd ../../..
 
 ## Code Structure
 
-Most code is in the [omnireg](omnireg) folder. We mainly use RoITr as backbone, and have therefore fully integrated it into the codebase in the  [omnireg/roitr](omnireg/roitr) folder.
+Most code is in the [sfmreg](sfmreg) folder. We mainly use RoITr as backbone, and have therefore fully integrated it into the codebase in the  [sfmreg/roitr](sfmreg/roitr) folder.
 
 The final experiments used to produce tables etc can be found in [experiments/final_experiments](experiments/final_experiments).
 
@@ -90,15 +90,15 @@ The evaluation is still quite manual. Running the experiments on SfMReg should j
 
 ```bash
 # SFMReger
-python experiments/final_experiments/sfmreger_eval_finetuned.py omnireg/roitr/configs/val/sfmreg.yaml
-python experiments/final_experiments/sfmreger_eval_non_finetuned.py omnireg/roitr/configs/val/sfmreg.yaml
+python experiments/final_experiments/sfmreger_eval_finetuned.py sfmreg/roitr/configs/val/sfmreg.yaml
+python experiments/final_experiments/sfmreger_eval_non_finetuned.py sfmreg/roitr/configs/val/sfmreg.yaml
 # RoiTr
-python experiments/final_experiments/roi_tr_eval_sfmreg.py omnireg/roitr/configs/val/sfmreg.yaml --finetuned
-python experiments/final_experiments/roi_tr_eval_sfmreg.py omnireg/roitr/configs/val/sfmreg.yaml 
+python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/sfmreg.yaml --finetuned
+python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/sfmreg.yaml 
 # GeoTransformer
-python experiments/final_experiments/geotransformer_eval_sfmreg.py omnireg/roitr/configs/val/sfmreg.yaml --backbone=3dmatch
+python experiments/final_experiments/geotransformer_eval_sfmreg.py sfmreg/roitr/configs/val/sfmreg.yaml --backbone=3dmatch
 # OverlapPredator
-python experiments/final_experiments/predator_eval_sfmreg.py omnireg/OverlapPredator/configs/test/sfmreg.yaml
+python experiments/final_experiments/predator_eval_sfmreg.py sfmreg/OverlapPredator/configs/test/sfmreg.yaml
 ```
 
 On Cambridge I've made some things kind of automatic, for example our finetuned method:
@@ -117,15 +117,15 @@ python experiments/final_experiments/predator_eval_cambridge.py
 On Quad6k:
 ```bash
 # SFMReger
-python experiments/final_experiments/sfmreger_eval_finetuned.py omnireg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
-python experiments/final_experiments/sfmreger_eval_non_finetuned.py omnireg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds
+python experiments/final_experiments/sfmreger_eval_finetuned.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
+python experiments/final_experiments/sfmreger_eval_non_finetuned.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds
 # RoiTr
-python experiments/final_experiments/roi_tr_eval_sfmreg.py omnireg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds --finetuned
-python experiments/final_experiments/roi_tr_eval_sfmreg.py omnireg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds 
+python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds --finetuned
+python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds 
 # GeoTransformer
-python experiments/final_experiments/geotransformer_eval_sfmreg.py omnireg/roitr/configs/val/quad.yaml --backbone=3dmatch --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
+python experiments/final_experiments/geotransformer_eval_sfmreg.py sfmreg/roitr/configs/val/quad.yaml --backbone=3dmatch --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
 # OverlapPredator
-python experiments/final_experiments/predator_eval_sfmreg.py omnireg/OverlapPredator/configs/test/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
+python experiments/final_experiments/predator_eval_sfmreg.py sfmreg/OverlapPredator/configs/test/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
 ```
 
 
@@ -144,7 +144,7 @@ We provide a simply API to use the model for inference in [api](api), code examp
 
 ```python
 import pycolmap
-from omnireg.api import SfMReger
+from sfmreg.api import SfMReger
 
 model_A = pycolmap.Reconstruction(...)
 model_B = pycolmap.Reconstruction(...)

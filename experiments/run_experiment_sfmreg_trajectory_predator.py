@@ -22,6 +22,6 @@ except Exception as e:
 log_path = "/proj/inter-op-slam/home/ejodhes/logs"
 
 if args.sim3:
-    subprocess.call(["python", args.experiment, "omnireg/OverlapPredator/configs/"+args.task+"/sfmreg.yaml", "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path, "--sim3"])
+    subprocess.call(["python", args.experiment, "sfmreg/OverlapPredator/configs/"+args.task+"/sfmreg.yaml", "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path, "--sim3"])
 else:
-    subprocess.call(["python", args.experiment, "omnireg/OverlapPredator/configs/"+args.task+"/sfmreg.yaml", "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path])
+    subprocess.call(["python", args.experiment, "sfmreg/OverlapPredator/configs/"+args.task+"/sfmreg.yaml", "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path])

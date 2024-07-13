@@ -5,18 +5,18 @@ import torch
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from omnireg.roitr.lib.utils import setup_seed
-from omnireg.roitr.configs.utils import load_config
+from sfmreg.roitr.lib.utils import setup_seed
+from sfmreg.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from omnireg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from omnireg.roitr.model.RIGA_v2 import create_model
-from omnireg.roitr.lib.loss import OverallLoss, Evaluator
-from omnireg.roitr.lib.tester import get_trainer
-from omnireg.models import SimTr
+from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
+from sfmreg.roitr.model.RIGA_v2 import create_model
+from sfmreg.roitr.lib.loss import OverallLoss, Evaluator
+from sfmreg.roitr.lib.tester import get_trainer
+from sfmreg.models import SimTr
 
 def main(points_A, points_B, viewpoints_A = None, viewpoints_B = None):
     from tensorboardX import SummaryWriter
-    import omnireg
+    import sfmreg
 
     #########################################################
     # load config
@@ -30,7 +30,7 @@ def main(points_A, points_B, viewpoints_A = None, viewpoints_B = None):
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     config = load_config(args.config)
     config['root'] = args.data_root + ("/indoor" if config['dataset'] == "tdmatch" else "/sfmreg/pointclouds")
     config['local_rank'] = int(os.environ.get("LOCAL_RANK", -1))
@@ -59,7 +59,7 @@ def main(points_A, points_B, viewpoints_A = None, viewpoints_B = None):
     config = edict(config)
     assert config.mode in ("val", "test"), "no training"
     ######## Experiment settings ###########
-    config.pretrain = "pretrained/omnireg_sfmreg_finetuned.pth"
+    config.pretrain = "pretrained/sfmreg_sfmreg_finetuned.pth"
     
     experiment_conf = edict(
         name = 'omniglue',  # just for interfacing

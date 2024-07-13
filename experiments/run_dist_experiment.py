@@ -21,5 +21,5 @@ log_path = "/proj/inter-op-slam/home/ejodhes/logs"
 
 
 subprocess.call(["torchrun",f"--nproc_per_node={args.num_gpus}", "--nnodes=1", "--rdzv_backend=c10d", 
-                 args.experiment, "omnireg/roitr/configs/train/tdmatch.yaml", 
+                 args.experiment, "sfmreg/roitr/configs/train/tdmatch.yaml", 
                  "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path])

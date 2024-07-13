@@ -1,5 +1,5 @@
-from omnireg.geotransformer.datasets.registration.threedmatch.dataset import ThreeDMatchPairDataset
-from omnireg.geotransformer.utils.data import (
+from sfmreg.geotransformer.datasets.registration.threedmatch.dataset import ThreeDMatchPairDataset
+from sfmreg.geotransformer.utils.data import (
     registration_collate_fn_stack_mode,
     calibrate_neighbors_stack_mode,
     build_dataloader_stack_mode,

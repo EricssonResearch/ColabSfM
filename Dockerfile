@@ -19,10 +19,10 @@ RUN wget \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 
 # define a working directory inside the docker image, it will contain your code
-RUN conda create -n omnireg python=3.10
+RUN conda create -n sfmreg python=3.10
 ENV HOME="/"
-RUN echo "source activate omnireg" > ~/.bashrc
-ENV PATH="/opt/conda/envs/omnireg/bin:${PATH}"
+RUN echo "source activate sfmreg" > ~/.bashrc
+ENV PATH="/opt/conda/envs/sfmreg/bin:${PATH}"
 # RUN conda install -c conda-forge cxx-compiler
 WORKDIR /app/
 COPY requirements.txt /app/
@@ -57,13 +57,13 @@ RUN python setup.py build develop
 # Install pointops
 #RUN pip install .
 #RUN apt update && apt install -y build-essential
-# Install omnireg
+# Install sfmreg
 WORKDIR /app/
-COPY omnireg /app/omnireg
+COPY sfmreg /app/sfmreg
 RUN pip install .
 COPY experiments /app/experiments
 
 # install Predator
-WORKDIR /app/omnireg/OverlapPredator/cpp_wrappers
+WORKDIR /app/sfmreg/OverlapPredator/cpp_wrappers
 RUN sh compile_wrappers.sh
 WORKDIR /app/

@@ -6,22 +6,22 @@ from torch.optim.lr_scheduler import ConstantLR
 
 from easydict import EasyDict as edict
 
-from omnireg.utils import load_obj, get_best_device
-from omnireg.models.model import OmniGlue
-from omnireg.train import train_epoch, train_k_steps
-from omnireg.datasets.indoor import IndoorDataset
-from omnireg.losses.nll_loss import NLLLoss
-from omnireg.losses.circle_loss import CoarseMatchingLoss
-from omnireg.losses.weighted_combination import WeightedCombination
-from omnireg.benchmarks.tdmatch import TDMatchBenchmark
-from omnireg.checkpoint import CheckPoint
-import omnireg
+from sfmreg.utils import load_obj, get_best_device
+from sfmreg.models.model import OmniGlue
+from sfmreg.train import train_epoch, train_k_steps
+from sfmreg.datasets.indoor import IndoorDataset
+from sfmreg.losses.nll_loss import NLLLoss
+from sfmreg.losses.circle_loss import CoarseMatchingLoss
+from sfmreg.losses.weighted_combination import WeightedCombination
+from sfmreg.benchmarks.tdmatch import TDMatchBenchmark
+from sfmreg.checkpoint import CheckPoint
+import sfmreg
 from tensorboardX import SummaryWriter
 
 def train(args):
     import os
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join("logs", experiment_name))
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join("logs", experiment_name))
     config = edict(normalize_descriptors = False, backbone = 'roitr', root="data/indoor", 
                    overlap_radius = 0.0375, augment_noise = 0.005, encoder_only = True, 
                    use_global_transformer = True, nsample = [8, 16, 16, 16], use_refiner = False, normalize_features = False)

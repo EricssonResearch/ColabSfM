@@ -6,20 +6,20 @@ from torch.optim.lr_scheduler import ConstantLR
 
 from easydict import EasyDict as edict
 
-from omnireg.utils import load_obj, get_best_device
-from omnireg.models.model import OmniGlue
-from omnireg.train import train_epoch, train_k_steps
-from omnireg.datasets.indoor import IndoorDataset
-from omnireg.losses.nll_loss import NLLLoss
-from omnireg.benchmarks.tdmatch import TDMatchBenchmark
-from omnireg.checkpoint import CheckPoint
-import omnireg
+from sfmreg.utils import load_obj, get_best_device
+from sfmreg.models.model import OmniGlue
+from sfmreg.train import train_epoch, train_k_steps
+from sfmreg.datasets.indoor import IndoorDataset
+from sfmreg.losses.nll_loss import NLLLoss
+from sfmreg.benchmarks.tdmatch import TDMatchBenchmark
+from sfmreg.checkpoint import CheckPoint
+import sfmreg
 from tensorboardX import SummaryWriter
 
 def train(args):
     import os
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     
     config = edict(normalize_descriptors = False, backbone = 'roitr', root=f"{args.data_root}/indoor", 
                    overlap_radius = 0.0375, augment_noise = 0.005, encoder_only = False, n_layers = 8,
@@ -34,7 +34,7 @@ def train(args):
     dataset = IndoorDataset(data_root= args.data_root, infos = load_obj(f"{args.data_root}/indoor/train_info.pkl"), config = config, max_points=16_000)# TODO: more max points
     tdmatch_benchmark = TDMatchBenchmark(IndoorDataset(data_root= args.data_root, infos = load_obj(f"{args.data_root}/indoor/val_info.pkl"), config = config))
     batch_size = 4
-    from omnireg.utils import collate_ragged
+    from sfmreg.utils import collate_ragged
     dataloader = DataLoader(dataset, batch_size=batch_size, num_workers = batch_size, shuffle=True, collate_fn = collate_ragged)
     optimizer = AdamW(model.parameters(), lr = batch_size * 4e-5, weight_decay=1e-8)
     lr_scheduler = ConstantLR(factor = 1, optimizer=optimizer)
@@ -47,7 +47,7 @@ def train(args):
     start_step = 0
     model, optimizer, lr_scheduler, start_step = checkpointer.load(model, optimizer, lr_scheduler, start_step)
     #tdmatch_benchmark.benchmark(model)
-    omnireg.GLOBAL_STEP = start_step
+    sfmreg.GLOBAL_STEP = start_step
     for step in range(start_step, num_steps, len(dataloader) * effective_batch_size):
         train_epoch(
             dataloader = dataloader, 
@@ -57,7 +57,7 @@ def train(args):
             lr_scheduler = lr_scheduler,
             iters_to_accumulate = 1,
             )        
-        checkpointer.save(model, optimizer, lr_scheduler, omnireg.GLOBAL_STEP)
+        checkpointer.save(model, optimizer, lr_scheduler, sfmreg.GLOBAL_STEP)
         tdmatch_benchmark.benchmark(model)
 
 def test(args):

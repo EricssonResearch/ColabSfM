@@ -18,8 +18,8 @@ from lib.tester import get_trainer
 
 def main():
     from tensorboardX import SummaryWriter
-    import omnireg
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join("logs", "roitr"))
+    import sfmreg
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join("logs", "roitr"))
 
     #########################################################
     # load config

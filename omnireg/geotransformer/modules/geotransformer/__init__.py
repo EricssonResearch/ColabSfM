@@ -1,5 +1,0 @@
-from omnireg.geotransformer.modules.geotransformer.geotransformer import GeometricStructureEmbedding, GeometricTransformer
-from omnireg.geotransformer.modules.geotransformer.superpoint_matching import SuperPointMatching
-from omnireg.geotransformer.modules.geotransformer.superpoint_target import SuperPointTargetGenerator
-from omnireg.geotransformer.modules.geotransformer.point_matching import PointMatching
-from omnireg.geotransformer.modules.geotransformer.local_global_registration import LocalGlobalRegistration

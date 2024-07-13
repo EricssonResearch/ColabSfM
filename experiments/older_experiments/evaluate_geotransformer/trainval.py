@@ -3,7 +3,7 @@ import time
 
 import torch.optim as optim
 
-from omnireg.geotransformer.engine import EpochBasedTrainer
+from sfmreg.geotransformer.engine import EpochBasedTrainer
 
 from config import make_cfg
 from dataset import train_valid_data_loader

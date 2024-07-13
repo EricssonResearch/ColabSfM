@@ -1,5 +1,5 @@
 import numpy as np
-from omnireg.utils import to_o3d_pcd
+from sfmreg.utils import to_o3d_pcd
 import open3d as o3d
 
 src_pcd = np.random.randn(1000, 3)

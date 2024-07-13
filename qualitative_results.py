@@ -5,27 +5,27 @@ import torch
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from omnireg.roitr.lib.utils import setup_seed
-from omnireg.roitr.configs.utils import load_config
+from sfmreg.roitr.lib.utils import setup_seed
+from sfmreg.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from omnireg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from omnireg.roitr.model.RIGA_v2 import create_model
-from omnireg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
-from omnireg.roitr.lib.tester import get_trainer
-from omnireg.roitr.registration.benchmark_utils import ransac_pose_estimation_correspondences
+from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
+from sfmreg.roitr.model.RIGA_v2 import create_model
+from sfmreg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
+from sfmreg.roitr.lib.tester import get_trainer
+from sfmreg.roitr.registration.benchmark_utils import ransac_pose_estimation_correspondences
 
 from tqdm import tqdm
 import numpy as np
 
-from omnireg.models.pred_wrapper import PreadtorWrap, calibrate_neighbors
+from sfmreg.models.pred_wrapper import PreadtorWrap, calibrate_neighbors
 import sys
-sys.path.append("omnireg/OverlapPredator")
+sys.path.append("sfmreg/OverlapPredator")
 from models.architectures import KPFCNN
 from configs.models import architectures
 
 if __name__ == '__main__':
     # set up validation
-    config = load_config("omnireg/roitr/configs/val/sfmreg.yaml")
+    config = load_config("sfmreg/roitr/configs/val/sfmreg.yaml")
     config['root'] = "data/sfmreg/megadepth/pointclouds_megadepth"
     config['device'] = torch.device('cuda', 0)
     ##########################################################
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     
     #############################################
     # create Predator model
-    config = load_config("omnireg/OverlapPredator/configs/val/sfmreg.yaml")
+    config = load_config("sfmreg/OverlapPredator/configs/val/sfmreg.yaml")
     config['device'] = torch.device('cuda', 0)
     config_predator = edict(config)
     config_predator.pretrain = "pretrained/predator-3dmatch.pth"

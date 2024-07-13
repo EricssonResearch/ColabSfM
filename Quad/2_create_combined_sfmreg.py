@@ -97,4 +97,4 @@ metadata = {"src": [names[i] for i,j in overlapping],
             "rot": torch.eye(3)[None].expand(len(overlapping),3,3).tolist(),
             "trans": torch.zeros(3)[None].expand(len(overlapping),3).tolist()}
 pkl.dump(metadata, open(f"{pointcloud_dir}/{method}_infos","wb"))
-pkl.dump(metadata, open(f"/home/ejaealb/work/omnireg/omnireg/roitr/configs/quad/{method}_infos.pkl","wb"))
+pkl.dump(metadata, open(f"/home/ejaealb/work/sfmreg/sfmreg/roitr/configs/quad/{method}_infos.pkl","wb"))

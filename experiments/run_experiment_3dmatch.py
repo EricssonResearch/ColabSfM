@@ -21,4 +21,4 @@ except Exception as e:
 log_path = "/proj/inter-op-slam/home/ejodhes/logs"
 
 
-subprocess.call(["python", args.experiment, "omnireg/roitr/configs/"+args.task+"/tdmatch.yaml", "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path])
+subprocess.call(["python", args.experiment, "sfmreg/roitr/configs/"+args.task+"/tdmatch.yaml", "--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path])

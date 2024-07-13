@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from IPython import embed
 
-from omnireg.geotransformer.modules.kpconv import ConvBlock, ResidualBlock, UnaryBlock, LastUnaryBlock, nearest_upsample
+from sfmreg.geotransformer.modules.kpconv import ConvBlock, ResidualBlock, UnaryBlock, LastUnaryBlock, nearest_upsample
 
 
 class KPConvFPN(nn.Module):

@@ -4,7 +4,7 @@ import argparse
 
 from easydict import EasyDict as edict
 
-from omnireg.geotransformer.utils.common import ensure_dir
+from sfmreg.geotransformer.utils.common import ensure_dir
 
 
 _C = edict()

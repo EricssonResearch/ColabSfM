@@ -5,17 +5,17 @@ import torch
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from omnireg.roitr.lib.utils import setup_seed
-from omnireg.roitr.configs.utils import load_config
+from sfmreg.roitr.lib.utils import setup_seed
+from sfmreg.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from omnireg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from omnireg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
-from omnireg.roitr.lib.tester import get_trainer
+from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
+from sfmreg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
+from sfmreg.roitr.lib.tester import get_trainer
 
-from omnireg.models.pred_wrapper import PreadtorWrap, calibrate_neighbors
-from omnireg.losses.metric_loss_wrapper import MetricLossWraper
+from sfmreg.models.pred_wrapper import PreadtorWrap, calibrate_neighbors
+from sfmreg.losses.metric_loss_wrapper import MetricLossWraper
 
-sys.path.append("omnireg/OverlapPredator")
+sys.path.append("sfmreg/OverlapPredator")
 from models.architectures import KPFCNN
 from configs.models import architectures
 
@@ -23,7 +23,7 @@ from configs.models import architectures
 
 def main():
     from tensorboardX import SummaryWriter
-    import omnireg
+    import sfmreg
 
     #########################################################
     # load config
@@ -41,7 +41,7 @@ def main():
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     config = load_config(args.config)
     config['local_rank'] = args.local_rank
     config['root'] = args.data_root

@@ -4,9 +4,9 @@ import time
 
 import numpy as np
 
-from omnireg.geotransformer.engine import SingleTester
-from omnireg.geotransformer.utils.torch import release_cuda
-from omnireg.geotransformer.utils.common import ensure_dir, get_log_string
+from sfmreg.geotransformer.engine import SingleTester
+from sfmreg.geotransformer.utils.torch import release_cuda
+from sfmreg.geotransformer.utils.common import ensure_dir, get_log_string
 
 from dataset import test_data_loader
 from config import make_cfg

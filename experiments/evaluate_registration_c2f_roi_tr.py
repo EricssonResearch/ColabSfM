@@ -1,14 +1,14 @@
 import os, sys, glob, torch, argparse
 import numpy as np
-from omnireg.roitr.lib.utils import setup_seed, natural_key
+from sfmreg.roitr.lib.utils import setup_seed, natural_key
 from tqdm import tqdm
-from omnireg.roitr.registration.benchmark_utils import ransac_pose_estimation_correspondences, get_inlier_ratio_correspondence, get_scene_split, write_est_trajectory
-from omnireg.roitr.registration.benchmark import benchmark
-from omnireg.roitr.lib.utils import square_distance
-from omnireg.roitr.visualizer.visualizer import Visualizer
-from omnireg.roitr.visualizer.plot import draw_distance_geo_feat
-from omnireg.roitr.dataset.common import collect_local_neighbors, get_square_distance_matrix, point2node_sampling
-from omnireg.roitr.lib.utils import weighted_procrustes
+from sfmreg.roitr.registration.benchmark_utils import ransac_pose_estimation_correspondences, get_inlier_ratio_correspondence, get_scene_split, write_est_trajectory
+from sfmreg.roitr.registration.benchmark import benchmark
+from sfmreg.roitr.lib.utils import square_distance
+from sfmreg.roitr.visualizer.visualizer import Visualizer
+from sfmreg.roitr.visualizer.plot import draw_distance_geo_feat
+from sfmreg.roitr.dataset.common import collect_local_neighbors, get_square_distance_matrix, point2node_sampling
+from sfmreg.roitr.lib.utils import weighted_procrustes
 
 setup_seed(0)
 

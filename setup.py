@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name = "omnireg",
+    name = "sfmreg",
     author = "Johan Edstedt",
-    packages = find_packages(include = "omnireg*"),
+    packages = find_packages(include = "sfmreg*"),
     install_requires=open("requirements.txt", "r").read().split("\n"),
 )

@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 
-from omnireg.geotransformer.modules.loss import WeightedCircleLoss
-from omnireg.geotransformer.modules.ops.transformation import apply_transform
-from omnireg.geotransformer.modules.registration.metrics import isotropic_transform_error
-from omnireg.geotransformer.modules.ops.pairwise_distance import pairwise_distance
+from sfmreg.geotransformer.modules.loss import WeightedCircleLoss
+from sfmreg.geotransformer.modules.ops.transformation import apply_transform
+from sfmreg.geotransformer.modules.registration.metrics import isotropic_transform_error
+from sfmreg.geotransformer.modules.ops.pairwise_distance import pairwise_distance
 
 
 class CoarseMatchingLoss(nn.Module):

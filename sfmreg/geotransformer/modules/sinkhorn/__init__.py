@@ -1,0 +1,1 @@
+from sfmreg.geotransformer.modules.sinkhorn.learnable_sinkhorn import LearnableLogOptimalTransport

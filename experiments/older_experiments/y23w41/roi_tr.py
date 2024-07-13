@@ -18,7 +18,7 @@ from lib.tester import get_trainer
 
 def main():
     from tensorboardX import SummaryWriter
-    import omnireg
+    import sfmreg
 
     #########################################################
     # load config
@@ -32,7 +32,7 @@ def main():
 
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
-    omnireg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, "roitr"))
+    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, "roitr"))
     config = load_config(args.config)
     config['root'] = args.data_root + "/indoor"
     config['local_rank'] = args.local_rank
