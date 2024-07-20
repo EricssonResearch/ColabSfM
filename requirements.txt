@@ -1,4 +1,4 @@
-numpy==1.26
+numpy<=1.26
 pykitti
 matplotlib
 opencv-python
@@ -13,6 +13,6 @@ tqdm
 easydict
 tensorboardx
 nibabel
-pycolmap
+pycolmap==0.6.1
 h5py
 gitpython
