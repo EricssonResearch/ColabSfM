@@ -16,3 +16,4 @@ nibabel
 pycolmap==0.6.1
 h5py
 gitpython
+hloc @ git+https://github.com/cvg/Hierarchical-Localization.git

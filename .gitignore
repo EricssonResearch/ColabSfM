@@ -1,0 +1,4 @@
+__MACOS*
+.vscode*
+*egg-info
+*.pyc
