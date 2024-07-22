@@ -10,35 +10,31 @@ import torch
 
 if __name__ == "__main__":
     scenes = ["chess", "fire", "heads", "office", "pumpkin", "redkitchen", "stairs"]
+    base_path = Path('datasets/7scenes/')
+    triangulated_path = base_path / "7scenes_sfm_triangulated"
     for scene in scenes:
-        base_path = f'data/7scenes_sfm_triangulated/{scene}/triangulated'
-        for subset in ["train", "test"]:
-            keys = []
-            scene_path = Path(base_path, subset)
-            image_dir =  Path(scene_path, "images")
-            outputs = Path(f'datasets/7scenes_sfm_triangulated/{scene}', subset)
-            sfm_dir = outputs / 'sift-sattler'
-            if os.path.exists(sfm_dir):
-                print("sfm_dir exists")
-                continue
-            print(f"Creating a triangulation for session {subset}")
+        scene_path = triangulated_path / scene
+        for subset in ["Train", "Test"]:
+            subset_path = scene_path / subset
+            image_dir =  base_path / scene
+            outputs = subset_path
+            sfm_dir = subset_path / "sfm"
+            print(f"Creating a triangulation for {scene=} {subset=}")
+            ref_reconstr = pycolmap.Reconstruction(subset_path)
+            im_names = [im.name for idx, im in ref_reconstr.images.items()]
             try:
                 os.makedirs(outputs, exist_ok=True)
                 sfm_pairs = outputs / 'pairs-netvlad.txt'
                 retrieval_conf = extract_features.confs['netvlad']
-                feature_conf = extract_features.confs['sift-1024']
+                feature_conf = extract_features.confs['sift']
                 matcher_conf = match_features.confs['NN-ratio']
-                
-                reference_model_A_path = Path(f"datasets/7scenes/7scenes-retriangulated/{scene}/{subset}")
+                reference_model_path = subset_path
 
-                added_camera_ids = set()
-                retrieval_path = extract_features.main(retrieval_conf, image_dir, outputs)
-                torch.cuda.empty_cache()
-                pairs_from_retrieval.main(retrieval_path, sfm_pairs, num_matched = 40)
-                feature_path = extract_features.main(feature_conf, image_dir, outputs)
+                retrieval_path = extract_features.main(retrieval_conf, image_dir, outputs, image_list=im_names)
+                pairs_from_retrieval.main(retrieval_path, sfm_pairs, num_matched = 10)
+                feature_path = extract_features.main(feature_conf, image_dir, outputs, image_list=im_names)
                 match_path = match_features.main(matcher_conf, sfm_pairs, feature_conf['output'], outputs)
-                model = triangulation.main(sfm_dir, reference_model_A_path, image_dir, sfm_pairs, feature_path, match_path)
-                #visualization.visualize_sfm_2d(model, image_dir)
+                model = triangulation.main(sfm_dir, reference_model_path, image_dir, sfm_pairs, feature_path, match_path)
                 model.write_text(str(sfm_dir))
             except Exception as e:
                 print(e)
