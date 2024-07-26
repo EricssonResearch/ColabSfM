@@ -16,7 +16,7 @@ from hloc.utils.read_write_model import (
 logger = logging.getLogger(__name__)
 
 
-def scale_sfm_images(full_model, scaled_model, image_dir):
+def scale_sfm_images(full_model, scaled_model, image_dir, ext = ".bin"):
     """Duplicate the provided model and scale the camera intrinsics so that
     they match the original image resolution - makes everything easier.
     """
@@ -46,7 +46,7 @@ def scale_sfm_images(full_model, scaled_model, image_dir):
             width=w, height=h, params=camera.params * np.array([sx, sx, sy, 1.0])
         )
 
-    write_model(scaled_cameras, images, points3D, scaled_model)
+    write_model(scaled_cameras, images, points3D, scaled_model, ext = ext)
 
 
 def create_query_list_with_intrinsics(
