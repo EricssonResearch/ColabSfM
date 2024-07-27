@@ -3,7 +3,7 @@ import rerun as rr
 from easy_gravity import get_gravity_from_colmap_reconstruction
 import numpy as np
 
-reconstr =pycolmap.Reconstruction("datasets/CambridgeLandmarks_Colmap_Retriangulated_1024px/KingsCollege/model_train")#Train/sfm")
+reconstr =pycolmap.Reconstruction("datasets/cambridge/cambridge-retriangulated/GreatCourt/test/sift")#Train/sfm")
 colors = np.array([pt3d.color for pt3d in reconstr.points3D.values()])
 xyzs = np.array([pt3d.xyz for pt3d in reconstr.points3D.values()])
 #cams = np.array([im.])
