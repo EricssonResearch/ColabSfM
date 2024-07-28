@@ -1,12 +1,8 @@
-# SfMReg Models
+# ColabSfM
 Maintainer: Johan Edstedt
 Contact: johan.edstedt@liu.se
 
 Here we provide instructions for training sfmreg registration models.
-
-## Namings
-
-I've used sfmreg, sfmreg, and recently SfMReger
 
 ## Prepare data
 
@@ -41,6 +37,10 @@ Available in [tum_pipeline](tum_pipeline)
 
 ## Install
 
+## New way
+TODO
+
+### Old way
 1. Create a new conda env:
 ```conda create -n sfmreg python=3.10```
 ```conda activate sfmreg```
@@ -144,7 +144,7 @@ We provide a simply API to use the model for inference in [api](api), code examp
 
 ```python
 import pycolmap
-from sfmreg.api import SfMReger
+from colabsfm.api import SfMReger
 
 model_A = pycolmap.Reconstruction(...)
 model_B = pycolmap.Reconstruction(...)

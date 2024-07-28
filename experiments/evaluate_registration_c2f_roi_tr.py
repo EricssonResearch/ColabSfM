@@ -1,14 +1,14 @@
 import os, sys, glob, torch, argparse
 import numpy as np
-from sfmreg.roitr.lib.utils import setup_seed, natural_key
+from colabsfm.roitr.lib.utils import setup_seed, natural_key
 from tqdm import tqdm
-from sfmreg.roitr.registration.benchmark_utils import ransac_pose_estimation_correspondences, get_inlier_ratio_correspondence, get_scene_split, write_est_trajectory
-from sfmreg.roitr.registration.benchmark import benchmark
-from sfmreg.roitr.lib.utils import square_distance
-from sfmreg.roitr.visualizer.visualizer import Visualizer
-from sfmreg.roitr.visualizer.plot import draw_distance_geo_feat
-from sfmreg.roitr.dataset.common import collect_local_neighbors, get_square_distance_matrix, point2node_sampling
-from sfmreg.roitr.lib.utils import weighted_procrustes
+from colabsfm.roitr.registration.benchmark_utils import ransac_pose_estimation_correspondences, get_inlier_ratio_correspondence, get_scene_split, write_est_trajectory
+from colabsfm.roitr.registration.benchmark import benchmark
+from colabsfm.roitr.lib.utils import square_distance
+from colabsfm.roitr.visualizer.visualizer import Visualizer
+from colabsfm.roitr.visualizer.plot import draw_distance_geo_feat
+from colabsfm.roitr.dataset.common import collect_local_neighbors, get_square_distance_matrix, point2node_sampling
+from colabsfm.roitr.lib.utils import weighted_procrustes
 
 setup_seed(0)
 

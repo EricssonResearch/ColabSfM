@@ -1,4 +1,5 @@
-from sfmreg.models.model import OmniGlue
+import torch
+from colabsfm.models.model import OmniGlue
 
 def sanity_check_gpu():
     device = "cuda"

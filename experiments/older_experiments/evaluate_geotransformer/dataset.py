@@ -1,5 +1,5 @@
-from sfmreg.geotransformer.datasets.registration.threedmatch.dataset import ThreeDMatchPairDataset
-from sfmreg.geotransformer.utils.data import (
+from colabsfm.geotransformer.datasets.registration.threedmatch.dataset import ThreeDMatchPairDataset
+from colabsfm.geotransformer.utils.data import (
     registration_collate_fn_stack_mode,
     calibrate_neighbors_stack_mode,
     build_dataloader_stack_mode,

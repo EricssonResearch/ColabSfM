@@ -4,9 +4,9 @@ import time
 
 import numpy as np
 
-from sfmreg.geotransformer.engine import SingleTester
-from sfmreg.geotransformer.utils.torch import release_cuda
-from sfmreg.geotransformer.utils.common import ensure_dir, get_log_string
+from colabsfm.geotransformer.engine import SingleTester
+from colabsfm.geotransformer.utils.torch import release_cuda
+from colabsfm.geotransformer.utils.common import ensure_dir, get_log_string
 
 from dataset import test_data_loader
 from config import make_cfg

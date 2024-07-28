@@ -5,17 +5,17 @@ import torch
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from sfmreg.roitr.lib.utils import setup_seed
-from sfmreg.roitr.configs.utils import load_config
+from colabsfm.roitr.lib.utils import setup_seed
+from colabsfm.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from sfmreg.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
-from sfmreg.roitr.lib.tester import get_trainer
-from sfmreg.models.geotr_wrapper import GeoTr, calibrate_neighbors_stack_mode
-from sfmreg.geotransformer import create_model
-from sfmreg.geotransformer.config.config import make_cfg
+from colabsfm.roitr.dataset.dataloader import get_dataset, get_dataloader
+from colabsfm.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
+from colabsfm.roitr.lib.tester import get_trainer
+from colabsfm.models.geotr_wrapper import GeoTr, calibrate_neighbors_stack_mode
+from colabsfm.geotransformer import create_model
+from colabsfm.geotransformer.config.config import make_cfg
 
-from sfmreg.geotransformer.utils.data import registration_collate_fn_stack_mode
+from colabsfm.geotransformer.utils.data import registration_collate_fn_stack_mode
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -23,7 +23,7 @@ warnings.filterwarnings("ignore")
 
 def main():
     from tensorboardX import SummaryWriter
-    import sfmreg
+    import colabsfm
 
     #########################################################
     # load config
@@ -89,7 +89,7 @@ def main():
     else:
         backbone = "kitti"
         config.pretrain = "pretrained/geotransformer-kitti.pth.tar"
-        # from sfmreg.geotransformer.config.kitti_config import make_cfg
+        # from colabsfm.geotransformer.config.kitti_config import make_cfg
         cfg = make_cfg()
         neighs = [411,  73,  64,  45,  27]
         

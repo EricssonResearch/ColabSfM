@@ -1,1 +1,0 @@
-from sfmreg.geotransformer.datasets.registration.modelnet.dataset import ModelNetPairDataset

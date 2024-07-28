@@ -2,3 +2,5 @@ __MACOS*
 .vscode*
 *egg-info
 *.pyc
+.ruff_cache
+.venv

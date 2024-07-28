@@ -6,13 +6,13 @@ from torch.optim.lr_scheduler import ConstantLR
 
 from types import SimpleNamespace
 
-from sfmreg.utils import load_obj, get_best_device
-from sfmreg.models.model import OmniGlue
-from sfmreg.train import train_epoch, train_k_steps
-from sfmreg.datasets.indoor import IndoorDataset
-from sfmreg.losses.nll_loss import NLLLoss
-from sfmreg.benchmarks.tdmatch import TDMatchBenchmark
-from sfmreg.checkpoint import CheckPoint
+from colabsfm.utils import load_obj, get_best_device
+from colabsfm.models.model import OmniGlue
+from colabsfm.train import train_epoch, train_k_steps
+from colabsfm.datasets.indoor import IndoorDataset
+from colabsfm.losses.nll_loss import NLLLoss
+from colabsfm.benchmarks.tdmatch import TDMatchBenchmark
+from colabsfm.checkpoint import CheckPoint
 
 def train(args):
     import os

@@ -8,16 +8,16 @@ import json
 import torch
 import numpy as np
 
-from sfmreg.geotransformer.engine import Logger
-from sfmreg.geotransformer.modules.registration.procrustes import weighted_procrustes
-from sfmreg.geotransformer.utils.summary_board import SummaryBoard
-from sfmreg.geotransformer.utils.open3d import registration_with_ransac_from_correspondences
-from sfmreg.geotransformer.utils.registration import (
+from colabsfm.geotransformer.engine import Logger
+from colabsfm.geotransformer.modules.registration.procrustes import weighted_procrustes
+from colabsfm.geotransformer.utils.summary_board import SummaryBoard
+from colabsfm.geotransformer.utils.open3d import registration_with_ransac_from_correspondences
+from colabsfm.geotransformer.utils.registration import (
     evaluate_sparse_correspondences,
     evaluate_correspondences,
     compute_registration_error,
 )
-from sfmreg.geotransformer.datasets.registration.threedmatch.utils import get_scene_abbr
+from colabsfm.geotransformer.datasets.registration.threedmatch.utils import get_scene_abbr
 
 from config import make_cfg
 

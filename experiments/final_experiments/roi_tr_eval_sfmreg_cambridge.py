@@ -5,18 +5,18 @@ import torch
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from sfmreg.roitr.lib.utils import setup_seed
-from sfmreg.roitr.configs.utils import load_config
+from colabsfm.roitr.lib.utils import setup_seed
+from colabsfm.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from sfmreg.roitr.model.RIGA_v2 import create_model
-from sfmreg.roitr.lib.loss import OverallLoss, EvaluatorRegistration
-from sfmreg.roitr.lib.tester import get_trainer
-from sfmreg.models import SimTr
+from colabsfm.roitr.dataset.dataloader import get_dataset, get_dataloader
+from colabsfm.roitr.model.RIGA_v2 import create_model
+from colabsfm.roitr.lib.loss import OverallLoss, EvaluatorRegistration
+from colabsfm.roitr.lib.tester import get_trainer
+from colabsfm.models import SimTr
 
 def main(points_A, points_B, viewpoints_A = None, viewpoints_B = None, shared_scale = True, gt = None):
     from tensorboardX import SummaryWriter
-    import sfmreg
+    import colabsfm
 
     #########################################################
     # load config

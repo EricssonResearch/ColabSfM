@@ -1,5 +1,0 @@
-from sfmreg.geotransformer.modules.geotransformer.geotransformer import GeometricStructureEmbedding, GeometricTransformer
-from sfmreg.geotransformer.modules.geotransformer.superpoint_matching import SuperPointMatching
-from sfmreg.geotransformer.modules.geotransformer.superpoint_target import SuperPointTargetGenerator
-from sfmreg.geotransformer.modules.geotransformer.point_matching import PointMatching
-from sfmreg.geotransformer.modules.geotransformer.local_global_registration import LocalGlobalRegistration

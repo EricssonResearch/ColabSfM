@@ -6,16 +6,16 @@ from torch.optim.lr_scheduler import ConstantLR
 
 from easydict import EasyDict as edict
 
-from sfmreg.utils import load_obj, get_best_device
-from sfmreg.models.model import OmniGlue
-from sfmreg.train import train_epoch, train_k_steps
-from sfmreg.datasets.indoor import IndoorDataset
-from sfmreg.losses.nll_loss import NLLLoss
-from sfmreg.losses.circle_loss import CoarseMatchingLoss
-from sfmreg.losses.weighted_combination import WeightedCombination
-from sfmreg.benchmarks.tdmatch import TDMatchBenchmark
-from sfmreg.checkpoint import CheckPoint
-import sfmreg
+from colabsfm.utils import load_obj, get_best_device
+from colabsfm.models.model import OmniGlue
+from colabsfm.train import train_epoch, train_k_steps
+from colabsfm.datasets.indoor import IndoorDataset
+from colabsfm.losses.nll_loss import NLLLoss
+from colabsfm.losses.circle_loss import CoarseMatchingLoss
+from colabsfm.losses.weighted_combination import WeightedCombination
+from colabsfm.benchmarks.tdmatch import TDMatchBenchmark
+from colabsfm.checkpoint import CheckPoint
+import colabsfm
 from tensorboardX import SummaryWriter
 
 def train(args):

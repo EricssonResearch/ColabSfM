@@ -18,7 +18,7 @@ from lib.tester import get_trainer
 
 def main():
     from tensorboardX import SummaryWriter
-    import sfmreg
+    import colabsfm
 
     #########################################################
     # load config

@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
-from sfmreg.utils import estimate_normals
+from colabsfm.utils import estimate_normals
 import sys
 sys.path.append("third_party/RoITr")
 from lib.utils import setup_seed
@@ -40,7 +40,7 @@ class RoITrWrapper(nn.Module):
 
 def main():
     from tensorboardX import SummaryWriter
-    import sfmreg
+    import colabsfm
     sfmreg.LOGGER = SummaryWriter(logdir = os.path.join("logs", "roitr"))
 
     #########################################################

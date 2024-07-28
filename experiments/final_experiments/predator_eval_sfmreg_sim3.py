@@ -5,15 +5,15 @@ import torch
 from torch import optim
 from torch.utils.data.distributed import DistributedSampler # for Pytorch DistbutedDataParallel(DDP) training
 
-from sfmreg.roitr.lib.utils import setup_seed
-from sfmreg.roitr.configs.utils import load_config
+from colabsfm.roitr.lib.utils import setup_seed
+from colabsfm.roitr.configs.utils import load_config
 from easydict import EasyDict as edict
-from sfmreg.roitr.dataset.dataloader import get_dataset, get_dataloader
-from sfmreg.roitr.lib.loss import OverallLoss, Evaluator,EvaluatorRegistration
-from sfmreg.roitr.lib.tester import get_trainer
+from colabsfm.roitr.dataset.dataloader import get_dataset, get_dataloader
+from colabsfm.roitr.lib.loss import OverallLoss, Evaluator,EvaluatorRegistration
+from colabsfm.roitr.lib.tester import get_trainer
 
-from sfmreg.models.pred_wrapper import PreadtorWrap, calibrate_neighbors
-from sfmreg.losses.metric_loss_wrapper import MetricLossWraper
+from colabsfm.models.pred_wrapper import PreadtorWrap, calibrate_neighbors
+from colabsfm.losses.metric_loss_wrapper import MetricLossWraper
 
 sys.path.append("sfmreg/OverlapPredator")
 from models.architectures import KPFCNN
@@ -23,7 +23,7 @@ from configs.models import architectures
 
 def main():
     from tensorboardX import SummaryWriter
-    import sfmreg
+    import colabsfm
 
     #########################################################
     # load config

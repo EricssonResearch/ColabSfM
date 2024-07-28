@@ -3,7 +3,7 @@ import time
 
 import torch.optim as optim
 
-from sfmreg.geotransformer.engine import EpochBasedTrainer
+from colabsfm.geotransformer.engine import EpochBasedTrainer
 
 from config import make_cfg
 from dataset import train_valid_data_loader

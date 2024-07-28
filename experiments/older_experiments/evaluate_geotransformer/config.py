@@ -4,7 +4,7 @@ import argparse
 
 from easydict import EasyDict as edict
 
-from sfmreg.geotransformer.utils.common import ensure_dir
+from colabsfm.geotransformer.utils.common import ensure_dir
 
 
 _C = edict()
