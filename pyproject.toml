@@ -29,6 +29,7 @@ requires-python = ">= 3.8"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+requires = ["torch", "setuptools"]
 
 [tool.rye]
 managed = true
@@ -38,4 +39,4 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/colabsfm"]
+packages = ["src/colabsfm", "src/pointops"]

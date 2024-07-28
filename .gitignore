@@ -4,3 +4,5 @@ __MACOS*
 *.pyc
 .ruff_cache
 .venv
+.data
+dist/*
