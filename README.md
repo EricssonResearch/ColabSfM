@@ -37,12 +37,8 @@ Available in [tum_pipeline](tum_pipeline)
 
 ## Install
 
-## New way
-TODO
-
-### Old way
 1. Create a new conda env:
-```conda create -n sfmreg python=3.10```
+```conda create -n colabsfm python=3.10```
 ```conda activate sfmreg```
 2. pip install the requirments in development mode
 ```pip install -e .```

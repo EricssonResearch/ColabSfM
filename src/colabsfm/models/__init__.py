@@ -1,1 +1,0 @@
-from .simtr_wrapper import SimTr

@@ -57,7 +57,7 @@ def main():
     ##########################################################
     config = edict(config)
 
-    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name)) if config.mode == "train" else None 
+    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name)) if config.mode == "train" else None 
     ######## Experiment settings ###########
     if config.mode in ("val", "test"):
         config.pretrain = "pretrained/symmetric_flip_no_dist.pth"

@@ -40,7 +40,7 @@ def main():
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
+    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     config = load_config(args.config)
     config['local_rank'] = args.local_rank
     config['root'] = args.data_root

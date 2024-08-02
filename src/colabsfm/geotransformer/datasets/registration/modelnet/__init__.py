@@ -1,1 +1,0 @@
-from colabsfm.geotransformer.datasets.registration.modelnet.dataset import ModelNetPairDataset

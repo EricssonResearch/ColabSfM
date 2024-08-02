@@ -1,3 +1,0 @@
-RANK = 0
-LOGGER = None
-GLOBAL_STEP = 0

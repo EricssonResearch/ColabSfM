@@ -32,7 +32,7 @@ def main():
 
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
-    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, "roitr"))
+    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, "roitr"))
     config = load_config(args.config)
     config['root'] = args.data_root + "/indoor"
     config['local_rank'] = args.local_rank

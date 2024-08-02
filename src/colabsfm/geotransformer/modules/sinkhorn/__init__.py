@@ -1,1 +1,0 @@
-from colabsfm.geotransformer.modules.sinkhorn.learnable_sinkhorn import LearnableLogOptimalTransport

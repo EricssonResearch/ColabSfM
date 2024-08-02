@@ -19,7 +19,7 @@ from tensorboardX import SummaryWriter
 def train(args):
     import os
     experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
+    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     
     config = edict(normalize_descriptors = False, backbone = 'roitr', root=f"{args.data_root}/indoor", 
                    overlap_radius = 0.0375, augment_noise = 0.005, encoder_only = False, n_layers = 8, num_heads = 4,

@@ -41,7 +41,7 @@ class RoITrWrapper(nn.Module):
 def main():
     from tensorboardX import SummaryWriter
     import colabsfm
-    sfmreg.LOGGER = SummaryWriter(logdir = os.path.join("logs", "roitr"))
+    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join("logs", "roitr"))
 
     #########################################################
     # load config
