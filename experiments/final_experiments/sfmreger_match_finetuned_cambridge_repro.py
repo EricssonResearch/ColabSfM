@@ -89,18 +89,18 @@ def main():
 
 
     method = "sift"#"sp+sg"#"sift-sattler" #"sfm_disk+lightglue" #
-    scenes = ["chess", "fire", "heads","office","pumpkin", "redkitchen", "stairs"]
+    scenes = ["GreatCourt", "KingsCollege", "OldHospital","ShopFacade","StMarysChurch"]
     
-    data_root = Path("data/sfmreg/7scenes")
-    test, train = "Test", "Train"
-    print("Doing 7scenes benchmark with SE(3) (shared_scale = True), set shared_scale = False if you want Sim3 benchmark")
+    data_root = Path("data/sfmreg/cambridge")
+    test, train = "test", "train"
+    print("Doing cambridge benchmark with SE(3) (shared_scale = True), set shared_scale = False if you want Sim3 benchmark")
     for scene in scenes:
         scene_name = f"{scene}_benchmark"
         points_A = np.load(data_root /scene_name /"pointclouds"/ train /f"{method}_cloud.npy")
         viewpoints_A = np.load(data_root / scene_name/ "pointclouds"/ train /f"{method}_viewpoints.npy")
         rot_ab = np.eye(3)
         tr_ab = np.zeros([3])
-        if True:
+        if False:
             # print("Sampling Random Rotation, Note: For rotation variant methods this needs to be repeated many times to get a reliable estimate")
             from scipy.spatial.transform import Rotation
             euler_ab=np.random.rand(3)*np.pi*2 # anglez, angley, anglex
