@@ -6,10 +6,17 @@ import pickle as pkl
 import os
 #from scantools.capture.session import Session
 import torch
+from argparse import ArgumentParser
 #from hloc.pipelines.7scenes.utils import scale_sfm_images
 
 if __name__ == "__main__":
-    scenes = ["chess", "fire", "heads", "office", "pumpkin", "redkitchen", "stairs"]
+    parser = ArgumentParser()
+    parser.add_argument("--scenes", required=False, default = None)
+    args = parser.parse_args()
+    if args.scenes is None:
+        scenes = ["chess", "fire", "heads", "office", "pumpkin", "redkitchen", "stairs"]
+    else:
+        scenes = args.scenes.split(",")
     base_path = Path('datasets/7scenes/')
     triangulated_path = base_path / "7scenes_sfm_triangulated"
     for scene in scenes:
@@ -29,7 +36,7 @@ if __name__ == "__main__":
             reference_model_path = subset_path
 
             retrieval_path = extract_features.main(retrieval_conf, image_dir, outputs, image_list=im_names)
-            pairs_from_retrieval.main(retrieval_path, sfm_pairs, num_matched = 10)
+            pairs_from_retrieval.main(retrieval_path, sfm_pairs, num_matched = 40)
             feature_path = extract_features.main(feature_conf, image_dir, outputs, image_list=im_names)
             match_path = match_features.main(matcher_conf, sfm_pairs, feature_conf['output'], outputs)
             model = triangulation.main(outputs, reference_model_path, image_dir, sfm_pairs, feature_path, match_path)
