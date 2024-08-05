@@ -7,3 +7,4 @@ __MACOS*
 .data
 dist/*
 data/*
+events.out.tfevents*

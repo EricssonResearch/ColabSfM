@@ -17,3 +17,4 @@ pycolmap==0.6.1
 h5py
 gitpython
 easy-gravity==0.2
+kornia
