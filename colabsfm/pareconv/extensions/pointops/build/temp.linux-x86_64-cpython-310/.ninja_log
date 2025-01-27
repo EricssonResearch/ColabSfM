@@ -1,0 +1,20 @@
+# ninja log v5
+1	9431	1737743481660962955	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/featuredistribute/featuredistribute_cuda.o	f4495a13b0a77489
+2	9484	1737743481708962777	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/interpolation/interpolation_cuda.o	d0144c68c1291a1c
+2	9562	1737743481792962467	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/knnquery_heap/knnquery_heap_cuda.o	8ce2c3298d2618f9
+3	10533	1737743482764958874	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/labelstat/labelstat_cuda.o	176875ff2897047e
+2	15018	1737743487248942299	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/grouping_int/grouping_int_cuda.o	7a7ce0f37d79c3fb
+22	15398	1737743487628940895	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/sampling/sampling_cuda.o	bac0f1d2a637cbde
+0	15586	1737743487816940199	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/ballquery/ballquery_cuda.o	a66c1aad9dc994c1
+1	15902	1737743488132939032	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/grouping/grouping_cuda.o	ac69ac3f5be716c5
+2	15982	1737743488212938735	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/knnquery/knnquery_cuda.o	a63327a9376030d9
+4	17579	1737743489808932837	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/labelstat/labelstat_cuda_kernel.o	d8563aa82528c612
+0	17677	1737743489908932467	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/ballquery/ballquery_cuda_kernel.o	2e7557b8407b174c
+2	17942	1737743490176931476	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/interpolation/interpolation_cuda_kernel.o	1e61dc2188cdb3bb
+38	18252	1737743490484930337	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/sampling/sampling_cuda_kernel.o	743b77a2f36b1842
+2	19801	1737743492032924615	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/knnquery/knnquery_cuda_kernel.o	14a30ba90a0fdd45
+1	20040	1737743492268923743	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/grouping/grouping_cuda_kernel.o	40621be4b11f814d
+1	20516	1737743492748921969	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/featuredistribute/featuredistribute_cuda_kernel.o	4250ea0cd7943bbf
+2	20555	1737743492784921836	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/grouping_int/grouping_int_cuda_kernel.o	fff111ef1f8bc404
+2	21543	1737743493776918169	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/knnquery_heap/knnquery_heap_cuda_kernel.o	97ff05e08d88ec7
+9	25020	1737743497248905335	/home/ejaealb/work/omnireg/omnireg/pareconv/extensions/pointops/build/temp.linux-x86_64-cpython-310/src/pointops_api.o	47da448418ea0b16

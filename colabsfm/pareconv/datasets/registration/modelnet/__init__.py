@@ -1,0 +1,1 @@
+from pareconv.datasets.registration.modelnet.dataset import ModelNetPairDataset
