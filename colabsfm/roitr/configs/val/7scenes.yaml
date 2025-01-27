@@ -24,9 +24,9 @@ optim:
 data:
   dataset: sfmreg
   root: data/sfmreg
-  train_info: sfmreg/roitr/configs/sfmreg/sfmreg_combined_train_infos.pkl
-  val_info: sfmreg/roitr/configs/sfmreg/sfmreg_combined_test_infos.pkl
-  test_info: sfmreg/roitr/configs/sfmreg/sfmreg_combined_test_infos.pkl
+  train_info: colabsfm/roitr/configs/sfmreg/sfmreg_combined_train_infos.pkl
+  val_info: colabsfm/roitr/configs/sfmreg/sfmreg_combined_test_infos.pkl
+  test_info: colabsfm/roitr/configs/sfmreg/sfmreg_combined_test_infos.pkl
   augment_noise: 0.
   benchmark: sfmreg
   rotated: False

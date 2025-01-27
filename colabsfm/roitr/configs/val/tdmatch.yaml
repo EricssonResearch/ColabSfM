@@ -25,8 +25,8 @@ optim:
 data:
   dataset: tdmatch
   root: data/indoor
-  train_info: sfmreg/roitr/configs/tdmatch/train_info.pkl
-  val_info: sfmreg/roitr/configs/tdmatch/val_info.pkl
+  train_info: colabsfm/roitr/configs/tdmatch/train_info.pkl
+  val_info: colabsfm/roitr/configs/tdmatch/val_info.pkl
   augment_noise: 0.
   benchmark: 3DLoMatch
   rotated: False

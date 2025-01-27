@@ -21,8 +21,8 @@ data:
   dataset: tdmatch
   root: data/indoor
   augment_noise: 0.005
-  train_info: sfmreg/roitr/configs/tdmatch/train_info.pkl
-  val_info: sfmreg/roitr/configs/tdmatch/val_info.pkl
+  train_info: colabsfm/roitr/configs/tdmatch/train_info.pkl
+  val_info: colabsfm/roitr/configs/tdmatch/val_info.pkl
   benchmark: 3DMatch
   patch_per_frame: 512
   point_per_patch: 128

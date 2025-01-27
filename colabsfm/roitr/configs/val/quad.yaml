@@ -23,10 +23,10 @@ optim:
 
 data:
   dataset: quad
-  root: data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
-  train_info: sfmreg/roitr/configs/quad/sift_infos.pkl
-  val_info: sfmreg/roitr/configs/quad/sift_infos.pkl
-  test_info: sfmreg/roitr/configs/quad/sift_infos.pkl
+  root: data/colabsfm/Quad/ArtsQuad_dataset/pointclouds/
+  train_info: colabsfm/roitr/configs/quad/sift_infos.pkl
+  val_info: colabsfm/roitr/configs/quad/sift_infos.pkl
+  test_info: colabsfm/roitr/configs/quad/sift_infos.pkl
   augment_noise: 0.
   benchmark: sfmreg
   rotated: False

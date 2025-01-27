@@ -108,7 +108,7 @@ class Trainer(object):
         if os.path.isfile(resume):
             print(f'=> loading checkpoint {resume}')
             state = torch.load(resume)
-            self.start_epoch = state['epoch']
+            self.start_epoch = state['epoch'] if "epoch" in state.keys() else 0
             if self.local_rank < 0:
                 #print(state['state_dict'].keys())
                 model_key = 'state_dict' if 'state_dict' in state else 'model' # hacky way to load both geotransformer and roitr

@@ -66,7 +66,7 @@ cd ../../..
 
 ## Code Structure
 
-Most code is in the [sfmreg](sfmreg) folder. We mainly use RoITr as backbone, and have therefore fully integrated it into the codebase in the  [sfmreg/roitr](sfmreg/roitr) folder.
+Most code is in the [sfmreg](sfmreg) folder. We mainly use RoITr as backbone, and have therefore fully integrated it into the codebase in the  [colabsfm/roitr](colabsfm/roitr) folder.
 
 The final experiments used to produce tables etc can be found in [experiments/final_experiments](experiments/final_experiments).
 
@@ -86,15 +86,17 @@ The evaluation is still quite manual. Running the experiments on SfMReg should j
 
 ```bash
 # SFMReger
-python experiments/final_experiments/sfmreger_eval_finetuned.py sfmreg/roitr/configs/val/sfmreg.yaml
-python experiments/final_experiments/sfmreger_eval_non_finetuned.py sfmreg/roitr/configs/val/sfmreg.yaml
+python experiments/final_experiments/sfmreger_eval_finetuned.py colabsfm/roitr/configs/val/sfmreg.yaml
+python experiments/final_experiments/sfmreger_eval_non_finetuned.py colabsfm/roitr/configs/val/sfmreg.yaml
 # RoiTr
-python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/sfmreg.yaml --finetuned
-python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/sfmreg.yaml 
+python experiments/final_experiments/roi_tr_eval_sfmreg.py colabsfm/roitr/configs/val/sfmreg.yaml --finetuned
+python experiments/final_experiments/roi_tr_eval_sfmreg.py colabsfm/roitr/configs/val/sfmreg.yaml 
 # GeoTransformer
-python experiments/final_experiments/geotransformer_eval_sfmreg.py sfmreg/roitr/configs/val/sfmreg.yaml --backbone=3dmatch
+python experiments/final_experiments/geotransformer_eval_sfmreg.py colabsfm/roitr/configs/val/sfmreg.yaml --backbone=3dmatch
 # OverlapPredator
 python experiments/final_experiments/predator_eval_sfmreg.py sfmreg/OverlapPredator/configs/test/sfmreg.yaml
+# PareNET
+python experiments/final_experiments/parenet_eval_sfmreg.py colabsfm/roitr/configs/val/sfmreg.yaml --backbone=3dmatch
 ```
 
 On Cambridge I've made some things kind of automatic, for example our finetuned method:
@@ -108,20 +110,24 @@ python experiments/final_experiments/sfmreger_match_non_finetuned_cambridge.py
 python experiments/final_experiments/geotransformer_eval_cambridge.py
 # OverlapPredator
 python experiments/final_experiments/predator_eval_cambridge.py
+# PareNET
+python experiments/final_experiments/parenet_eval_cambridge.py  colabsfm/roitr/configs/val/cambridge.yaml --backbone=3dmatch --points=30000 --data_root=data
 ```
 
 On Quad6k:
 ```bash
 # SFMReger
-python experiments/final_experiments/sfmreger_eval_finetuned.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
-python experiments/final_experiments/sfmreger_eval_non_finetuned.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds
+python experiments/final_experiments/sfmreger_eval_finetuned.py colabsfm/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
+python experiments/final_experiments/sfmreger_eval_non_finetuned.py colabsfm/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds
 # RoiTr
-python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds --finetuned
-python experiments/final_experiments/roi_tr_eval_sfmreg.py sfmreg/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds 
+python experiments/final_experiments/roi_tr_eval_sfmreg.py colabsfm/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds --finetuned
+python experiments/final_experiments/roi_tr_eval_sfmreg.py colabsfm/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds 
 # GeoTransformer
-python experiments/final_experiments/geotransformer_eval_sfmreg.py sfmreg/roitr/configs/val/quad.yaml --backbone=3dmatch --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
+python experiments/final_experiments/geotransformer_eval_sfmreg.py colabsfm/roitr/configs/val/quad.yaml --backbone=3dmatch --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
 # OverlapPredator
 python experiments/final_experiments/predator_eval_sfmreg.py sfmreg/OverlapPredator/configs/test/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/
+# PareNET
+python experiments/final_experiments/parenet_eval_sfmreg.py  colabsfm/roitr/configs/val/quad.yaml --data_root=data/sfmreg/Quad/ArtsQuad_dataset/pointclouds/ --backbone=3dmatch
 ```
 
 

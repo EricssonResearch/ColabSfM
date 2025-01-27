@@ -135,7 +135,7 @@ class CoarseMatchingLoss(nn.Module):
 
         loss = self.weighted_circle_loss(pos_masks, neg_masks, feat_dists, pos_scales)
         if colabsfm.LOGGER is not None:
-            colabsfm.LOGGER.add_scalars('data/roitr_train_loss', {"circle_loss": loss.item()}, global_step = sfmreg.GLOBAL_STEP)
+            colabsfm.LOGGER.add_scalars('data/roitr_train_loss', {"circle_loss": loss.item()}, global_step = colabsfm.GLOBAL_STEP)
         return loss
 
 
@@ -146,13 +146,13 @@ class FineMatchingLoss(nn.Module):
         self.mnn = cfg.fine_loss_use_mnn
 
     def forward(self, output_dict, data_dict):
-        tgt_node_corr_knn_points = output_dict['tgt_node_corr_knn_points']
-        src_node_corr_knn_points = output_dict['src_node_corr_knn_points']
-        tgt_node_corr_knn_masks = output_dict['tgt_node_corr_knn_masks']
-        src_node_corr_knn_masks = output_dict['src_node_corr_knn_masks']
-        matching_scores = output_dict['matching_scores']
         rot = data_dict['rot'][0]
         trans = data_dict['trans'][0]
+        tgt_node_corr_knn_points = output_dict['tgt_node_corr_knn_points'].to(rot.device)
+        src_node_corr_knn_points = output_dict['src_node_corr_knn_points'].to(rot.device)
+        tgt_node_corr_knn_masks = output_dict['tgt_node_corr_knn_masks'].to(rot.device)
+        src_node_corr_knn_masks = output_dict['src_node_corr_knn_masks'].to(rot.device)
+        matching_scores = output_dict['matching_scores']
         #src_node_corr_knn_points = apply_transform(src_node_corr_knn_points, transform)
 
         src_node_corr_knn_points = torch.matmul(src_node_corr_knn_points, rot.T) + (trans.T)[None, ::]
@@ -191,8 +191,8 @@ class OverallLoss(nn.Module):
 
             loss = self.weight_coarse_loss * coarse_loss + self.weight_fine_loss * fine_loss
             if colabsfm.LOGGER is not None:
-                colabsfm.LOGGER.add_scalars('data/roitr_train_loss', {"fine_loss": fine_loss.item()}, global_step = sfmreg.GLOBAL_STEP)
-            sfmreg.GLOBAL_STEP = sfmreg.GLOBAL_STEP + 1
+                colabsfm.LOGGER.add_scalars('data/roitr_train_loss', {"fine_loss": fine_loss.item()}, global_step = colabsfm.GLOBAL_STEP)
+            colabsfm.GLOBAL_STEP = colabsfm.GLOBAL_STEP + 1
         else:
             coarse_loss, fine_loss, loss = torch.zeros([1]), torch.zeros([1]), torch.zeros([1])
         return {
@@ -233,8 +233,8 @@ class Evaluator(nn.Module):
     @torch.no_grad()
     def evaluate_fine(self, output_dict, data_dict):
         rot, trans = data_dict['rot'][0], data_dict['trans'][0]
-        tgt_corr_points = output_dict['tgt_corr_points']
-        src_corr_points = output_dict['src_corr_points']
+        tgt_corr_points = output_dict['tgt_corr_points'].to(rot.device)
+        src_corr_points = output_dict['src_corr_points'].to(rot.device)
         if src_corr_points.shape[0] == 0:
             precision = 0.
         else:
