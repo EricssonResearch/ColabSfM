@@ -1,0 +1,17 @@
+__MACOS*
+.vscode*
+*egg-info
+*.pyc
+.ruff_cache
+.venv
+.data
+dist/*
+data/*
+events.out.tfevents*
+*.pth
+*.tar
+# Large files
+*.pkl
+logs/*
+pretrained/*
+*.ipynb_checkpoints
