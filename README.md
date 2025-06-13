@@ -22,9 +22,12 @@
 
 
 Maintainer: Johan Edstedt
+
 Contact: johan.edstedt@liu.se
 
-In this initial code release we provide inference and training code for our model, as well as the synthetic trajectory dataset.
+**🚧 Note: This repository is currently under active development. Some features and documentation may be incomplete. 🚧**
+
+In this initial code release we provide inference and training code for our model, as well as the synthetic trajectory dataset. Please refer to the checklist below for the current status of different components.
 
 ## API
 
@@ -50,10 +53,6 @@ print(registration_results)
 - [ ] **Result reproduction**: Verify that results reproduce paper results.
 - [ ] **Documentation**: Complete setup and usage documentation.
 
-
-## Prepare data
-
-Install hloc
 
 
 ## Install
@@ -159,6 +158,8 @@ python experiments/refineroitr_eval_finetuned.py colabsfm/configs/val/colabsfm.y
 
 </details>
 
+## Running evaluation
+An initial script for running evaluation on our proposed MegaDepth-based dataset can be found in [experiments/refineroitr_eval.py](experiments/refineroitr_eval.py)
 
 ## Tests
 A hardcoded test of MegaDepth scene 0015 can be found in tests/test.py.

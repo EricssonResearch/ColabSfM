@@ -1,1 +1,0 @@
-python evaluate_geotransformer.py --src_file depth.npy --ref_file lidar.npy --weights /media/fractal/Storage/ejodhes/.cache/geotransformer-3dmatch.pth.tar 
