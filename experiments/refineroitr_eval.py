@@ -12,7 +12,7 @@ from colabsfm.roitr.dataset.dataloader import get_dataset, get_dataloader
 from colabsfm.roitr.model.RIGA_v2 import create_model
 from colabsfm.roitr.lib.loss import OverallLoss, Evaluator, EvaluatorRegistration
 from colabsfm.roitr.lib.tester import get_trainer
-
+from datetime import datetime
 
 def main():
     from tensorboardX import SummaryWriter
@@ -31,11 +31,12 @@ def main():
 
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
-    experiment_name = os.path.splitext(os.path.basename(__file__))[0]
-    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     config = load_config(args.config)
     config['root'] = args.data_root
     config['local_rank'] = int(os.environ.get("LOCAL_RANK", -1))
+    
+    experiment_name = os.path.splitext(os.path.basename(__file__))[0] + '_' + config['mode'] + '_' + datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+    colabsfm.LOGGER = SummaryWriter(logdir = os.path.join(args.log_dir, experiment_name))
     #########################################################
     #set cuda devices for both DDP training and single-GPU training
     if config['local_rank'] > -1:
@@ -142,8 +143,10 @@ def main():
                                         drop_last=False)
     # create losses and evaluation metrics
     config.loss_func = OverallLoss(config)
-    # config.evaluator = Evaluator(config)
-    config.evaluator = EvaluatorRegistration(config)
+    if config.mode == 'train':
+        config.evaluator = Evaluator(config)
+    else:
+        config.evaluator = EvaluatorRegistration(config)
     trainer = get_trainer(config)
     if config.mode == 'train':
         trainer.train()

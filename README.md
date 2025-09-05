@@ -31,7 +31,7 @@ In this initial code release we provide inference and training code for our mode
 
 ## API
 
-We provide a simply API to use the model for inference in [api](api), code example below:
+We provide a simply API to use the model for inference in [api](colabsfm/api), code example below:
 
 ```python
 import pycolmap
@@ -49,8 +49,10 @@ print(registration_results)
 - [x] **Trained models**: Pre-trained weights available.
 - [x] **Training code**: Code for training the model.
 - [x] **Inference code**: API and inference scripts.
-- [ ] **Datasets**: Release synthetic trajectory dataset. 
+- [x] **Datasets**: Release synthetic trajectory dataset. 
 - [ ] **Result reproduction**: Verify that results reproduce paper results.
+   - [x] **Run eval on megadepth**: verify that the results of the release reproduce paper results.
+   - [ ] **Train from scratch**: verify if model trained with code performs on par with released weights
 - [ ] **Documentation**: Complete setup and usage documentation.
 
 
@@ -85,6 +87,34 @@ uv pip install .
 ```
 **Note:** installing these custom cuda kernels is quite finnicky, editable mode hangs in the current setup.
 
+</details>
+
+<details>
+<summary><b>Through venv</b> (click to expand)</summary>
+
+1. Create a new venv:
+```bash
+python3 -m venv colabsfm
+. colabsfm/bin/activate
+```
+2. pip install the requirments
+```bash
+pip install -e .
+```
+3. Install cuda-toolkit. You can try something like:
+```bash
+pip install cuda-toolkit
+``` 
+4. We need to build the pointops library. This can be done by 
+```bash
+cd third_party/pointops
+uv pip install .
+```
+**Note:** installing these custom cuda kernels is quite finnicky, editable mode hangs in the current setup.
+**Note:** to install pointops make sure you have python3-dev installed
+```bash
+sudo apt install python3-dev
+```
 </details>
 
 <details>
@@ -158,8 +188,35 @@ python experiments/refineroitr_eval_finetuned.py colabsfm/configs/val/colabsfm.y
 
 </details>
 
+## Training
+
+At the moment the code is only prepared to train from scratch on our proposed dataset
+
+To train a ColabSfM model:
+
+1. download the [released data](https://github.com/EricssonResearch/ColabSfM/releases/tag/megadepth-trajectories)
+
+2. run the script with the train configuration
+```bash
+python experiments/refineroitr_eval.py colabsfm/configs/train/colabsfm.yaml --data_root=<path to the data folder>
+```
+
 ## Running evaluation
 An initial script for running evaluation on our proposed MegaDepth-based dataset can be found in [experiments/refineroitr_eval.py](experiments/refineroitr_eval.py)
+
+**Note**: The script can also be used for training if given the proper configuration file.
+
+To run the evaluation on our proposed dataset:
+
+1. download the [released data and weights](https://github.com/EricssonResearch/ColabSfM/releases)
+
+2. by default the script will try to write to the workspace folder, you may need to create it
+
+3. run the evaluation script with the validation configuration
+```bash
+  python experiments/refineroitr_eval.py colabsfm/configs/val/megadepth.yaml --data_root=<path to the data folder> --pretrain_weights=<path to the model weights> --colabsfm_mode=<se3/sim3>
+```
+**Note**: the weights to be used need to be the ones for the respective mode, i.e., se3 or sim3
 
 ## Tests
 A hardcoded test of MegaDepth scene 0015 can be found in tests/test.py.

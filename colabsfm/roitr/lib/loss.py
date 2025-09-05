@@ -286,8 +286,7 @@ class EvaluatorRegistration(nn.Module):
         src_node_corr_indices = output_dict['src_node_corr_indices']
 
         precision = gt_node_corr_map[tgt_node_corr_indices, src_node_corr_indices].mean()
-        if torch.isnan(precision):
-            print("hej")
+        
         return precision
 
     @torch.no_grad()
@@ -415,14 +414,6 @@ class EvaluatorRegistration(nn.Module):
         ptsAB = scale_est*(src_pts @ rot_est.T) + t_est
         dists = np.linalg.norm(ptsAB[gt_corrs,:] - tgt_pts[gt_corrs,:], axis=1)
         rmse = np.sqrt(np.mean(dists**2))
-        # src_pcd, tgt_pcd = data_dict['src_points'].contiguous().cpu().numpy(), data_dict['tgt_points'].contiguous().cpu().numpy()
-        # Tgt = np.eye(4)
-        # Tgt[:3,:3] = rot_gt.cpu().numpy()
-        # Tgt[:3,3] = trans_gt.cpu().numpy()
-        # correspondences = get_correspondences(src_pcd,tgt_pcd,Test,0.1)
-        # ptsAB = scale_est*(src_pcd[correspondences[:,0]] @ rot_est.T) + t_est
-        # dists = np.linalg.norm(ptsAB - tgt_pcd[correspondences[:,1]], axis=1)
-        # rmse = np.sqrt(np.mean(dists**2))
             
         rot_est = torch.from_numpy(rot_est).to(trans_gt.get_device()).float()
         t_est = torch.from_numpy(t_est).to(trans_gt.get_device())
