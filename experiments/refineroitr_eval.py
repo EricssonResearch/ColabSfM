@@ -25,7 +25,9 @@ def main():
     parser.add_argument("--data_root", type = str, default = "data/colabsfm/megadepth")
     parser.add_argument("--log_dir", type = str, default = "logs")
     parser.add_argument("--checkpoint_dir", type = str, default = "workspace")
-
+    parser.add_argument("--pretrain_weights", type = str, default="")
+    parser.add_argument("--colabsfm_mode", type = str, default="se3") # se3, sim3
+    parser.add_argument("--use_color", type = bool, default=False)
 
     #"--data_root", data_path, "--checkpoint_dir", checkpoint_path, "--log_dir", log_path
     args, _ = parser.parse_known_args()
@@ -59,11 +61,7 @@ def main():
     config = edict(config)
 
     ######## Experiment settings ###########
-    if config.mode in ("val", "test"):
-        # config.pretrain = "workspace/y23w47_colabsfm_combined_lo/y23w47_colabsfm_combined_lo/model_best_PIR.pth"
-        # config.pretrain = 'workspace/y24w7_colabsfm_only/model_best_PIR.pth'
-        config.pretrain = 'workspace/colabsfm_combined_lo_k1/model_best_PIR.pth'
-        config.pretrain = 'data/colabsfm/models/sfmreg_finetuned.pth'
+    config.pretrain = args.pretrain_weights
     
     experiment_conf = edict(
         name = 'omniglue',  # just for interfacing
@@ -77,7 +75,9 @@ def main():
         flash = True,
         fine_loss_use_mnn = True,
         iter_size = 4,
-        low_overlap = False
+        low_overlap = False,
+        colabsfm_mode = args.colabsfm_mode, # se3, sim3
+        use_color = args.use_color
     )
     config.update(experiment_conf)
 

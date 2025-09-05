@@ -354,9 +354,9 @@ class Trainer(object):
                     self.writer.add_scalar(f'{phase}/{key}', value.avg, cur_iter)
 
                 message = f'{phase} Epoch: {epoch} [{c_iter + 1:4d}/{num_iter}] '
-                print(stats_meter)
+                # print(stats_meter)
                 for key, value in stats_meter.items():
-                    print(key, value)
+                    # print(key, value)
                     message += f'{key}:{value.avg:.2f}\t'
 
                 self.logger.write(message + '\n')
